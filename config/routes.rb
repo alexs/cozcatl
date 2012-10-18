@@ -1,10 +1,14 @@
 Store::Application.routes.draw do
 
+  resources :product_types
+
   resources :load_files
 
   devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
-
+  
   resources :products
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -55,7 +59,9 @@ Store::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-root :to => "products#index"
+  root :to => "product_types#index"
+
+  #root :to => "products#index"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
