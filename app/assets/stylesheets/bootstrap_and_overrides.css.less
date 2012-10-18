@@ -1,0 +1,131 @@
+@import "twitter/bootstrap/bootstrap";
+body { 
+	padding-top: 60px;
+}
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
+//       have the proper paths. So for now we use the absolute path.
+@fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
+@fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
+@fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
+@fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
+
+// Font Awesome
+@import "fontawesome";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+@import "variables";
+
+#error_explanation, .flash-error{
+ .alert;
+ .alert-error;
+}
+
+#error_explanation h2{
+ font-size: 18px;
+ line-height: 20px;
+ color: @errorText;
+}
+
+.dropdown-menu li form{
+ font-size: 18px;
+ line-height: 20px;
+ color: #126B9E;
+}
+
+.alert-warning{
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    border-radius: 4px 4px 4px 4px;
+    color: #C09853;
+    margin-bottom: 20px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.field_with_errors{
+	.control-group.error;
+}
+
+.flash-notice{
+	.alert;
+ 	.alert-success;
+}
+
+#presentation{
+border: 1px solid #DDDDDD;
+}
+
+.footer {
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    margin-top: 30px;
+    padding: 70px 0;
+}
+
+.links {
+    margin-bottom: 20px;
+}
+
+.links > a {
+    margin-right: 10px;
+}
+a {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+#error_explanation, .flash-error{
+ .alert;
+ .alert-error;
+}
+
+#error_explanation h2{
+ font-size: 18px;
+ line-height: 20px;
+ color: @errorText;
+}
+
+.dropdown-menu li form{
+ font-size: 18px;
+ line-height: 20px;
+ color: #126B9E;
+}
+
+.alert-warning{
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    border-radius: 4px 4px 4px 4px;
+    color: #C09853;
+    margin-bottom: 20px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.field_with_errors{
+	.control-group.error;
+}
+
+.flash-notice{
+	.alert;
+ 	.alert-success;
+}
+
+

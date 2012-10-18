@@ -1,0 +1,36 @@
+
+<% if !params[:notice].nil? %>
+ <p class="flash-notice"><%= params[:notice] %></p>
+<% end %>
+<h3>Lista de ficheros en el sistema</h3>
+<p>
+		<div class="alert alert-info">
+			<button class="close" type="button" data-dismiss="alert"> x </button>
+			<strong> ¡Importante! </strong>
+			Estos son los ficheros que se han subido al sistema, esto no significa que los productos ya esten cargados en el sitio. Para cargar los productos de un fichero en particular, seleccione la opción cargar productos del respectivo fichero.
+		</div>
+</p>
+<table class="table table-hover table-bordered">
+  <tr>
+    <th>Nombre de Fichero</th>
+	<th>Fecha en que se agregó el fichero.</th>
+    <th>Acciones</th>
+  </tr>
+
+<% @load_files.each do |load_file| %>
+  <tr>
+    <td><%= load_file.fichero.to_s.split('/').last %></td>
+	<td><%= load_file.created_at.to_date %></td>
+	<td><%= link_to(raw("  <i class='icon-upload'> </i> Cargar productos de este fichero"),load_file,{:confirm => "¿Estas seguro de cargar estos productos? Se eliminarán los productos anteriores que no coincidan con los de éste fichero. ",:class => 'btn btn-inverse btn-small'})  %>
+	<%= link_to(raw("  <i class='icon-trash'> </i> Eliminar Fichero"), load_file_path(load_file),
+      :method => :delete,:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Solo se eliminará el fichero del sistema, los productos guardados continuaran en el sistema hasta cargar un nuevo fichero.')) },:class => 'btn btn-small btn-danger')  %></td>
+  </tr>
+
+
+    
+<% end %>
+</table>
+
+<br />
+
+	<%= link_to(raw("  <i class='icon-plus-sign'> </i> Agregar un nuevo fichero"),new_load_file_path,{:class => 'btn btn-success btn-small'})  %>

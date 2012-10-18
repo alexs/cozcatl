@@ -1,0 +1,3 @@
+class Product < ActiveRecord::Base
+  attr_accessible :collection, :collection_sub, :color, :colour, :comment, :comments, :detail_new, :diameter, :diameter_unit, :entry_date, :grams, :hallmark, :length, :length_unit, :material, :metal, :p_size, :price_thb, :ref, :ring_for, :stock_not_ring, :stock_ring_freesize, :stock_ring_size_10, :stock_ring_size_11, :stock_ring_size_12, :stock_ring_size_2, :stock_ring_size_3, :stock_ring_size_4, :stock_ring_size_5, :stock_ring_size_6, :stock_ring_size_7, :stock_ring_size_8, :stock_ring_size_9, :stone, :surface, :thick, :thick_unit, :watch, :watch_band, :watch_case, :watch_gram, :watch_movement, :watch_waterproof, :wide, :wide_unit
+end

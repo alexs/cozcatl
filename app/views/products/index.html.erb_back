@@ -1,0 +1,127 @@
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:ref) %></th>
+      <th><%= model_class.human_attribute_name(:collection) %></th>
+      <th><%= model_class.human_attribute_name(:collection_sub) %></th>
+      <th><%= model_class.human_attribute_name(:grams) %></th>
+      <th><%= model_class.human_attribute_name(:price_thb) %></th>
+      <th><%= model_class.human_attribute_name(:ring_for) %></th>
+      <th><%= model_class.human_attribute_name(:comments) %></th>
+      <th><%= model_class.human_attribute_name(:p_size) %></th>
+      <th><%= model_class.human_attribute_name(:color) %></th>
+      <th><%= model_class.human_attribute_name(:detail_new) %></th>
+      <th><%= model_class.human_attribute_name(:colour) %></th>
+      <th><%= model_class.human_attribute_name(:metal) %></th>
+      <th><%= model_class.human_attribute_name(:surface) %></th>
+      <th><%= model_class.human_attribute_name(:stone) %></th>
+      <th><%= model_class.human_attribute_name(:material) %></th>
+      <th><%= model_class.human_attribute_name(:hallmark) %></th>
+      <th><%= model_class.human_attribute_name(:comment) %></th>
+      <th><%= model_class.human_attribute_name(:diameter) %></th>
+      <th><%= model_class.human_attribute_name(:diameter_unit) %></th>
+      <th><%= model_class.human_attribute_name(:length) %></th>
+      <th><%= model_class.human_attribute_name(:length_unit) %></th>
+      <th><%= model_class.human_attribute_name(:wide) %></th>
+      <th><%= model_class.human_attribute_name(:wide_unit) %></th>
+      <th><%= model_class.human_attribute_name(:thick) %></th>
+      <th><%= model_class.human_attribute_name(:thick_unit) %></th>
+      <th><%= model_class.human_attribute_name(:watch) %></th>
+      <th><%= model_class.human_attribute_name(:watch_band) %></th>
+      <th><%= model_class.human_attribute_name(:watch_movement) %></th>
+      <th><%= model_class.human_attribute_name(:watch_waterproof) %></th>
+      <th><%= model_class.human_attribute_name(:watch_case) %></th>
+      <th><%= model_class.human_attribute_name(:watch_gram) %></th>
+      <th><%= model_class.human_attribute_name(:stock_not_ring) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_freesize) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_2) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_3) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_4) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_5) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_6) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_7) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_8) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_9) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_10) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_11) %></th>
+      <th><%= model_class.human_attribute_name(:stock_ring_size_12) %></th>
+      <th><%= model_class.human_attribute_name(:entry_date) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.id, product_path(product) %></td>
+        <td><%= product.ref %></td>
+        <td><%= product.collection %></td>
+        <td><%= product.collection_sub %></td>
+        <td><%= product.grams %></td>
+        <td><%= product.price_thb %></td>
+        <td><%= product.ring_for %></td>
+        <td><%= product.comments %></td>
+        <td><%= product.p_size %></td>
+        <td><%= product.color %></td>
+        <td><%= product.detail_new %></td>
+        <td><%= product.colour %></td>
+        <td><%= product.metal %></td>
+        <td><%= product.surface %></td>
+        <td><%= product.stone %></td>
+        <td><%= product.material %></td>
+        <td><%= product.hallmark %></td>
+        <td><%= product.comment %></td>
+        <td><%= product.diameter %></td>
+        <td><%= product.diameter_unit %></td>
+        <td><%= product.length %></td>
+        <td><%= product.length_unit %></td>
+        <td><%= product.wide %></td>
+        <td><%= product.wide_unit %></td>
+        <td><%= product.thick %></td>
+        <td><%= product.thick_unit %></td>
+        <td><%= product.watch %></td>
+        <td><%= product.watch_band %></td>
+        <td><%= product.watch_movement %></td>
+        <td><%= product.watch_waterproof %></td>
+        <td><%= product.watch_case %></td>
+        <td><%= product.watch_gram %></td>
+        <td><%= product.stock_not_ring %></td>
+        <td><%= product.stock_ring_freesize %></td>
+        <td><%= product.stock_ring_size_2 %></td>
+        <td><%= product.stock_ring_size_3 %></td>
+        <td><%= product.stock_ring_size_4 %></td>
+        <td><%= product.stock_ring_size_5 %></td>
+        <td><%= product.stock_ring_size_6 %></td>
+        <td><%= product.stock_ring_size_7 %></td>
+        <td><%= product.stock_ring_size_8 %></td>
+        <td><%= product.stock_ring_size_9 %></td>
+        <td><%= product.stock_ring_size_10 %></td>
+        <td><%= product.stock_ring_size_11 %></td>
+        <td><%= product.stock_ring_size_12 %></td>
+        <td><%= product.entry_date %></td>
+        <td><%=l product.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_product_path(product), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_product_path,
+            :class => 'btn btn-primary' %>
+
+
+<%= will_paginate @products %>
