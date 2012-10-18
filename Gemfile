@@ -9,9 +9,7 @@ gem 'mysql'
 gem 'i18n'
 gem 'devise'
 gem 'haml'
-gem 'rmagick'
 gem 'carrierwave'
-gem 'http_accept_language'
 gem "devise-i18n", "~> 0.5.7"
 gem "cancan"
 gem 'nifty-generators'
