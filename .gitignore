@@ -29,6 +29,5 @@ config/database.yml
 tmp/*
 .idea
 .bundle/environment.rb
-Gemfile.lock
 .bundle
 log/*
