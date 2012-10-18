@@ -1,6 +1,6 @@
-<%- model_class = Product -%>
+<%- model_class = Product -%> 
 <div class="page-header">
-  <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2><h6> <%= Product.count %> productos en el catálogo.</h6>
 </div>
 <table class="table table-striped">
   <thead>
