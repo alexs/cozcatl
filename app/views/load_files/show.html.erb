@@ -1,6 +1,10 @@
+<br />
+<p>
 <% total = @load_file.load_products(@load_file.fichero) %>
 <% notice = "Se han cargado con éxito #{total} productos del fichero: #{@load_file.fichero.to_s.split('/').last}" %>
-
+</p>
 <p class="flash-notice"><%= notice %></p>
-
-<%= link_to 'Regresar', load_files_path, :class => "btn btn-primary btn-small" %>
+<br />
+<p>
+<%= link_to ' < Regresar al listado', load_files_path, :class => "btn btn-primary btn-small" %>
+</p>

@@ -15,3 +15,20 @@
 //= require twitter/bootstrap
 //= require_tree .
 $('#presentation').carousel();
+
+$('#new_load_file').submit(function(){
+    $('#save_load').val('Cargando...');
+    $('#save_load').attr('class','btn btn-medium btn-primary disabled');
+    $('input[type=submit]', this).attr('disabled', 'disabled');
+});
+
+
+$('.modal-footer [id^="load_data_button_"]').live("click", function(){
+  $('.modal-header h5').text('Espere porfavor...  Cargando...');
+  $('.modal-body p').text('Esta ventana se cerrará automáticamente una vez cargados los datos.');
+  $('.modal-footer a').hide();
+});
+
+
+
+
