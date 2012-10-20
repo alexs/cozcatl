@@ -16,6 +16,7 @@ gem 'nifty-generators'
 gem 'delayed_job_active_record'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+gem 'scrapi'
 
 # Gems used only for assets and not required
 # in production environments by default.

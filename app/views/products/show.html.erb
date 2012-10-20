@@ -1,16 +1,16 @@
 <div class="row">
 	<div class="span9 offset1">
 		<%- model_class = Product -%>
-		
-			<div class="page-header">
-		  		<h3><%=t '.title', :default => @product.ref %></h3>
-		  		<h4><i><%= @product.collection %></i></h4>
-				<h4><%= @product.price_thb %> €</h4>
-			  
-			</div>
+
+		<div class="page-header">
+			<h3><%=t '.title', :default => @product.ref %></h3>
+			<h4><i><%= @product.collection %></i></h4>
+			<h4><%= @product.price_thb %> €</h4>
+
+		</div>
 		<div class="row">
 			<div class="span5">
-			
+
 				<%= image_tag "http://g.tanai.com/main.php?src=#{@product.ref}.jpg", :class => "thumbnail" %>
 			</div>
 			<div class="span4">
@@ -24,50 +24,197 @@
 							<td><strong>Colección:</strong></td>
 							<td><%= @product.collection %></td>
 						</tr>
+						<% if !@product.collection_sub.nil? %>
 						<tr>
+							<td><strong>Tipo:</strong></td>
+							<td><%= @product.collection_sub %></td>
+						</tr>
+						<% end %>
+						<% if !@product.collection_sub.nil? %>
+						<tr>
+							<td><strong>Gramos:</strong></td>
+							<td><%= @product.grams.round(2) %></td>
+						</tr>
+						<% end %>
+						<% if !@product.ring_for.nil? and @product.ring_for.size > 1 and @product.ring_for != "null" %>
+						<tr>
+							<td><strong>Para:</strong></td>
+							<td><%= @product.ring_for %></td>
+						</tr>
+						<% end %>
+
+						<% if !@product.comments.nil? and @product.comments.size > 1 and @product.comments != "null" %>
+						<tr>
+							<td><strong>Comentarios:</strong></td>
+							<td><%= @product.comments %></td>
+						</tr>
+						<% end %>
+
+						<% if !@product.p_size.nil? and @product.p_size.size > 1 and @product.p_size != "null" %>
+						<tr>	
+							<td><strong>Tamaño:</strong></td>
+							<td><%= @product.p_size %></td>
+						</tr>
+						<% end %>						
+
+						<% if !@product.color.nil? and @product.color.size > 1 and @product.color != "null" %>
+						<tr>	
 							<td><strong>Color:</strong></td>
-							<td>...</td>
+							<td><%= @product.color %></td>
 						</tr>
-						<tr>
+						<% end %>	
+
+
+						<% if !@product.detail_new.nil? and @product.detail_new.size > 1 and @product.detail_new != "null" %>
+						<tr>	
+							<td><strong>Novedad:</strong></td>
+							<td><%= @product.detail_new %></td>
+						</tr>
+						<% end %>	
+
+						<% if !@product.colour.nil? and @product.colour.size > 1 and @product.colour != "null" %>
+						<tr>	
+							<td><strong>Tonalidad:</strong></td>
+							<td><%= @product.colour %></td>
+						</tr>
+						<% end %>	
+						<% if !@product.metal.nil? and @product.metal.size > 1 and @product.metal != "null" %>
+						<tr>	
 							<td><strong>Metal:</strong></td>
-							<td>...</td>
+							<td><%= @product.metal %></td>
 						</tr>
-						<tr>
+						<% end %>		
+
+						<% if !@product.surface.nil? and @product.surface.size > 1 and @product.surface. != "null" %>
+						<tr>	
 							<td><strong>Superficie:</strong></td>
-							<td>...</td>
+							<td><%= @product.surface %></td>
 						</tr>
-						<tr>
-							<td><strong>Material:</strong></td>
-							<td>...</td>
-						</tr>
-						<tr>
+						<% end %>
+
+						<% if !@product.stone.nil? and @product.stone.size > 1 and @product.stone. != "null" %>
+						<tr>	
 							<td><strong>Piedra:</strong></td>
-							<td>...</td>
+							<td><%= @product.stone %></td>
 						</tr>
-						<tr>
+						<% end %>	
+
+
+						<% if !@product.material.nil? and @product.material.size > 1 and @product.material != "null" %>
+						<tr>	
+							<td><strong>Material:</strong></td>
+							<td><%= @product.material %></td>
+						</tr>
+						<% end %>
+
+						<% if !@product.hallmark.nil? and @product.hallmark.size > 1 and @product.hallmark != "null" %>
+						<tr>	
+							<td><strong>Contraste:</strong></td>
+							<td><%= @product.hallmark %></td>
+						</tr>
+						<% end %>
+
+
+
+						<% if !@product.comment.nil? and @product.comment.size > 1 and @product.comment != "null" %>
+						<tr>	
 							<td><strong>Comentario:</strong></td>
-							<td>...</td>
+							<td><%= @product.comment %></td>
 						</tr>
-						<tr>
-							<td><strong>Largo:</strong></td>
-							<td>...</td>
+						<% end %>
+
+						<% if !@product.diameter.nil? and @product.diameter.size > 1 and @product.diameter != "null" and @product.diameter != 0  %>
+						<tr>	
+							<td><strong>Diametro:</strong></td>
+							<td><%= @product.diameter %> <%= @product.diameter_unit %></td>
 						</tr>
-						<tr>
+						<% end %>
+
+						<% if !@product.length.nil? and @product.length.size > 1 and @product.length != "null" and @product.length != 0 %>
+						<tr>	
+							<td><strong>Longitud:</strong></td>
+							<td><%= @product.length %> <%= @product.length_unit %></td>
+						</tr>
+						<% end %>
+
+
+						<% if !@product.wide.nil? and @product.wide.size > 1 and @product.wide != "null" and @product.wide != 0  %>
+						<tr>	
 							<td><strong>Ancho:</strong></td>
-							<td>...</td>
+							<td><%= @product.wide %> <%= @product.wide_unit %></td>
 						</tr>
-						<tr>
-							<td><strong>Peso:</strong></td>
-							<td>...</td>
+						<% end %>
+
+						<% if !@product.thick.nil? and @product.thick.size > 1 and @product.thick != "null" and @product.thick != 0  %>
+						<tr>	
+							<td><strong>Espesor:</strong></td>
+							<td><%= @product.thick %> <%= @product.thick_unit %></td>
 						</tr>
+						<% end %>
+
+						<% if !@product.watch.nil? and @product.watch.size > 1 and @product.watch != "null" and @product.watch != "cms" %>
+						<tr>	
+							<td><strong>Reloj:</strong></td>
+							<td><%= @product.watch %></td>
+						</tr>
+						<% end %>
+
+						<% if !@product.watch_band.nil? and @product.watch_band.size > 1 and @product.watch_band != "null"  %>
+						<tr>	
+							<td><strong>Correa:</strong></td>
+							<td><%= @product.watch_band %></td>
+						</tr>
+						<% end %>
+
+						<% if !@product.watch_movement.nil? and @product.watch_movement.size > 1 and @product.watch_movement != "null"  %>
+						<tr>	
+							<td><strong>Movimiento:</strong></td>
+							<td><%= @product.watch_movement %></td>
+						</tr>
+						<% end %>
+
+						<% if !@product.watch_waterproof.nil? and @product.watch_waterproof.size > 1 and @product.watch_waterproof != "null"  %>
+						<tr>	
+							<td><strong>Sumergible:</strong></td>
+							<td><%= @product.watch_waterproof %></td>
+						</tr>
+						<% end %>
+
+
+						<% if !@product.watch_case.nil? and @product.watch_case.size > 1 and @product.watch_case != "null"  %>
+						<tr>	
+							<td><strong>Carcasa:</strong></td>
+							<td><%= @product.watch_case %></td>
+						</tr>
+						<% end %>
+						
+							<% if !@product.watch_gram.nil? and @product.watch_gram.size > 1 and @product.watch_gram != "null" and @product.watch_gram > 0  %>
+							<tr>	
+								<td><strong>Gramos:</strong></td>
+								<td><%= @product.watch_gram %></td>
+							</tr>
+							<% end %>
+							
+							<% y = 10 %>
+							<% if y == 20 %>
+								<% if !@product.stock_not_ring.nil? and @product.stock_not_ring.size > 1 and @product.stock_not_ring != "null" %>
+								<tr>	
+									<td><strong>Piezas Disponibles:</strong></td>
+									<td><%= @product %></td>
+								</tr>
+								<% end %>
+						
+							<% end %>
+
+
 					</tbody>
 				</table>
 			</div>
 		</div>
 		<div class="form-actions">
 			<%= link_to 'Regresar', :back, :class => 'btn btn-info'%>
-		  <% link_to t('.back', :default => t("helpers.links.back")),
-		              products_path, :class => 'btn'  %>
+			<% link_to t('.back', :default => t("helpers.links.back")),
+			products_path, :class => 'btn'  %>
 		</div>
 	</div>
 </div>
@@ -83,111 +230,111 @@
 <% if x != 20 %>
 <%- model_class = Product -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+	<h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:ref) %>:</strong></dt>
-  <dd><%= @product.ref %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:collection) %>:</strong></dt>
-  <dd><%= @product.collection %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:collection_sub) %>:</strong></dt>
-  <dd><%= @product.collection_sub %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:grams) %>:</strong></dt>
-  <dd><%= @product.grams %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price_thb) %>:</strong></dt>
-  <dd><%= @product.price_thb %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:ring_for) %>:</strong></dt>
-  <dd><%= @product.ring_for %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
-  <dd><%= @product.comments %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:p_size) %>:</strong></dt>
-  <dd><%= @product.p_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:color) %>:</strong></dt>
-  <dd><%= @product.color %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:detail_new) %>:</strong></dt>
-  <dd><%= @product.detail_new %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:colour) %>:</strong></dt>
-  <dd><%= @product.colour %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:metal) %>:</strong></dt>
-  <dd><%= @product.metal %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:surface) %>:</strong></dt>
-  <dd><%= @product.surface %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stone) %>:</strong></dt>
-  <dd><%= @product.stone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:material) %>:</strong></dt>
-  <dd><%= @product.material %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:hallmark) %>:</strong></dt>
-  <dd><%= @product.hallmark %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
-  <dd><%= @product.comment %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:diameter) %>:</strong></dt>
-  <dd><%= @product.diameter %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:diameter_unit) %>:</strong></dt>
-  <dd><%= @product.diameter_unit %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:length) %>:</strong></dt>
-  <dd><%= @product.length %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:length_unit) %>:</strong></dt>
-  <dd><%= @product.length_unit %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:wide) %>:</strong></dt>
-  <dd><%= @product.wide %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:wide_unit) %>:</strong></dt>
-  <dd><%= @product.wide_unit %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:thick) %>:</strong></dt>
-  <dd><%= @product.thick %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:thick_unit) %>:</strong></dt>
-  <dd><%= @product.thick_unit %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:watch) %>:</strong></dt>
-  <dd><%= @product.watch %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:watch_band) %>:</strong></dt>
-  <dd><%= @product.watch_band %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:watch_movement) %>:</strong></dt>
-  <dd><%= @product.watch_movement %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:watch_waterproof) %>:</strong></dt>
-  <dd><%= @product.watch_waterproof %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:watch_case) %>:</strong></dt>
-  <dd><%= @product.watch_case %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:watch_gram) %>:</strong></dt>
-  <dd><%= @product.watch_gram %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_not_ring) %>:</strong></dt>
-  <dd><%= @product.stock_not_ring %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_freesize) %>:</strong></dt>
-  <dd><%= @product.stock_ring_freesize %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_2) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_2 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_3) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_3 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_4) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_4 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_5) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_5 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_6) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_6 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_7) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_7 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_8) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_8 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_9) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_9 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_10) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_10 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_11) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_11 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stock_ring_size_12) %>:</strong></dt>
-  <dd><%= @product.stock_ring_size_12 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:entry_date) %>:</strong></dt>
-  <dd><%= @product.entry_date %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:ref) %>:</strong></dt>
+	<dd><%= @product.ref %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:collection) %>:</strong></dt>
+	<dd><%= @product.collection %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:collection_sub) %>:</strong></dt>
+	<dd><%= @product.collection_sub %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:grams) %>:</strong></dt>
+	<dd><%= @product.grams %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:price_thb) %>:</strong></dt>
+	<dd><%= @product.price_thb %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:ring_for) %>:</strong></dt>
+	<dd><%= @product.ring_for %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
+	<dd><%= @product.comments %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:p_size) %>:</strong></dt>
+	<dd><%= @product.p_size %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:color) %>:</strong></dt>
+	<dd><%= @product.color %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:detail_new) %>:</strong></dt>
+	<dd><%= @product.detail_new %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:colour) %>:</strong></dt>
+	<dd><%= @product.colour %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:metal) %>:</strong></dt>
+	<dd><%= @product.metal %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:surface) %>:</strong></dt>
+	<dd><%= @product.surface %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stone) %>:</strong></dt>
+	<dd><%= @product.stone %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:material) %>:</strong></dt>
+	<dd><%= @product.material %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:hallmark) %>:</strong></dt>
+	<dd><%= @product.hallmark %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+	<dd><%= @product.comment %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:diameter) %>:</strong></dt>
+	<dd><%= @product.diameter %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:diameter_unit) %>:</strong></dt>
+	<dd><%= @product.diameter_unit %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:length) %>:</strong></dt>
+	<dd><%= @product.length %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:length_unit) %>:</strong></dt>
+	<dd><%= @product.length_unit %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:wide) %>:</strong></dt>
+	<dd><%= @product.wide %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:wide_unit) %>:</strong></dt>
+	<dd><%= @product.wide_unit %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:thick) %>:</strong></dt>
+	<dd><%= @product.thick %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:thick_unit) %>:</strong></dt>
+	<dd><%= @product.thick_unit %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:watch) %>:</strong></dt>
+	<dd><%= @product.watch %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:watch_band) %>:</strong></dt>
+	<dd><%= @product.watch_band %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:watch_movement) %>:</strong></dt>
+	<dd><%= @product.watch_movement %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:watch_waterproof) %>:</strong></dt>
+	<dd><%= @product.watch_waterproof %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:watch_case) %>:</strong></dt>
+	<dd><%= @product.watch_case %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:watch_gram) %>:</strong></dt>
+	<dd><%= @product.watch_gram %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_not_ring) %>:</strong></dt>
+	<dd><%= @product.stock_not_ring %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_freesize) %>:</strong></dt>
+	<dd><%= @product.stock_ring_freesize %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_2) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_2 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_3) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_3 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_4) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_4 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_5) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_5 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_6) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_6 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_7) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_7 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_8) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_8 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_9) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_9 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_10) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_10 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_11) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_11 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:stock_ring_size_12) %>:</strong></dt>
+	<dd><%= @product.stock_ring_size_12 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:entry_date) %>:</strong></dt>
+	<dd><%= @product.entry_date %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              products_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_product_path(@product), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              product_path(@product),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+	<%= link_to t('.back', :default => t("helpers.links.back")),
+	products_path, :class => 'btn'  %>
+	<%= link_to t('.edit', :default => t("helpers.links.edit")),
+	edit_product_path(@product), :class => 'btn' %>
+	<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+	product_path(@product),
+	:method => 'delete',
+	:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	:class => 'btn btn-danger' %>
 </div>
 <% end %>
