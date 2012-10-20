@@ -11,3 +11,6 @@
  *= require_self
  *= require_tree .
  */
+body{
+	background: url("bg_sky.png") repeat-x scroll left top #FFFFFF;
+}
