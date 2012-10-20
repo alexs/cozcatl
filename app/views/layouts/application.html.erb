@@ -27,7 +27,7 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </a>
-<%= link_to "Alexs Joyeria", new_user_session_path, :class => "brand" %>
+<%= link_to "Alexs Joyeria", navigators_path, :class => "brand" %>
 
 
 <div id="main-menu" class="nav-collapse">
@@ -39,19 +39,11 @@
 	
 	
 	
-<li><%= link_to "INICIO", new_user_session_path %></li>	
+<li><%= link_to "INICIO", navigators_path %></li>	
 <li><%= link_to 'Productos', products_path %></li>	
 <li><%= link_to 'Cargar Ficheros', load_files_path %></li>
 <li><a href="/#gallery" id="swatch-link">Ubicación</a></li>
-<li class="dropdown">
-<a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog <b class="caret"></b></a>
-<ul id="swatch-menu" class="dropdown-menu">
-<li><a href="/default">Contacto</a></li>
-<li class="divider"></li>
-<li><a href="#">Test 1</a></li>
-<li><a href="#">Test 2</a></li>
-</ul>
-</li>
+
 
 	<li id="preview-menu" class="dropdown">
 		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Contacto 
@@ -66,21 +58,25 @@
 			<li><a href="#" target="_blank">fax</a></li>
 		</ul>
 	</li>
+	
+	<%= form_for products_path, :html => {:method => 'get', :class => "navbar-search pull-left"} do %>
+	            <%= text_field_tag :search_word, nil, :class => "search-query span2", :placeholder => "Buscar..." %> 
+   <% end %>
 </ul>
 
 <ul id="main-menu-right" class="nav pull-right">
 	
-	<li id="preview-menu" class="dropdown">
-		<%= link_to(raw("Ingresa<b class='caret'></b>"),"#",{:class => 'dropdown-toggle', :data => {:toggle => "dropdown"}})  %>
-
-		<ul class="dropdown-menu">
-			<li>
-				<%= link_to t('links.myprofile'), edit_product_path(1)%>
-			<li><a href="#">Preferencias</a></li>
-			<li><a href="#">Cambiar contraseña</a></li>
-			<li class="divider"></li>
-			<li><%= link_to "Cerrar Sesión", "#" %></li>
-		</ul>
+	<li id="preview-menu">
+		 <% if user_signed_in? %>
+		
+		 <%= link_to(raw("#{current_user.email}"),"#",{:class => 'dropdown-toggle'})  %>
+		<% end %>
+	</li>
+	
+	<li id="preview-menu">
+		 <% if user_signed_in? %>
+			<li><%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>
+		<% end %>
 	</li>
 	
 </ul>

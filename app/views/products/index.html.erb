@@ -1,36 +1,36 @@
-<p></p><br />
+<br />
 <div class="row">
 	<div class="span3">
-			<ul class="nav nav-tabs nav-stacked">
-				<li>
-					<a href="#">Joyeria en plata</a>
-				</li>
-				<li>
-					<a href="#">Joyeria en acero</a>
-				</li>
-				<li>
-					<a href="#">Joyeria de moda</a>
-				</li>
-				<li>
-					<a href="#">Collares</a>
-				</li>
-				<li>
-					<a href="#">Accesorios</a>
-				</li>
-				<li>
-					<a href="#">Relojes</a>
-				</li>
-				<li>
-					<a href="#">Novedades</a>
-				</li>
-			</ul>
+		<ul class="nav nav-tabs nav-stacked">
+			<li>
+				<a href="<%= root_url %>products?search_word=silver">JOYERIA PLATA</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=steel">JOYERIA ACERO</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=fashion">BISUTERIA</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=cords">COLLARES</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=accessories">ACCESORIOS</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=watches">RELOJES</a>
+			</li>
+			<li>
+				<a href="#">NOVEDADES</a>
+			</li>
+		</ul>
 	</div>
 	<div class="span8">
 		<ul class="thumbnails" id="products_list">
 	    <% @products.each do |product| %>
 		  <li class="span2">
 		    <div class="thumbnail">
-			  <%= image_tag "http://img.tanai.com/m.php?ref=#{product.ref}" %>
+			  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
 		      <div class="caption">
 						<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
 				<center>

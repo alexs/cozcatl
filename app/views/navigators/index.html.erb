@@ -1,27 +1,28 @@
+<br />
 <p>
 <div class="row-fluid">	
 	<div class="span3">
 		<ul class="nav nav-tabs nav-stacked">
 			<li>
-				<a href="<%= root_url %>products?search_word=silver">JOYERIA PLATA</a>
+				<a href="#">Joyeria en plata</a>
 			</li>
 			<li>
-				<a href="<%= root_url %>products?search_word=steel">JOYERIA ACERO</a>
+				<a href="#">Joyeria en acero</a>
 			</li>
 			<li>
-				<a href="<%= root_url %>products?search_word=fashion">BISUTERIA</a>
+				<a href="#">Joyeria de moda</a>
 			</li>
 			<li>
-				<a href="<%= root_url %>products?search_word=cords">COLLARES</a>
+				<a href="#">Collares</a>
 			</li>
 			<li>
-				<a href="<%= root_url %>products?search_word=accessories">ACCESORIOS</a>
+				<a href="#">Accesorios</a>
 			</li>
 			<li>
-				<a href="<%= root_url %>products?search_word=watches">RELOJES</a>
+				<a href="#">Relojes</a>
 			</li>
 			<li>
-				<a href="#">NOVEDADES</a>
+				<a href="#">Novedades</a>
 			</li>
 		</ul>
 	</div>
@@ -61,27 +62,26 @@
 	</div>
 
 	<div class="span3">
-					<div class="form-horizontal well">
-						<h4>Inicia sesión.</h4>
-						
-						<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-							<%= f.label :email %>
-							<%= f.email_field :email %>
+				
+				
+					<% total = Product.count %>
+					<% products = [] %>
+					<% offset = rand(total) %>
+					<% products[0] = Product.first(:offset => offset) %>
 
-							<%= f.label :password %>
-							<%= f.password_field :password %>
-
-							<% if devise_mapping.rememberable? -%>
-							<%  f.check_box :remember_me %> <% f.label :remember_me %>
-							<% end -%>
-							<br />
-							<br />
-							
-							<%= f.submit "Entrar" %>
-						<% end %>
-
-							<%= render "devise/shared/links" %>
-					</div>
+				
+					    <div class="thumbnail">
+						  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[0].ref}" %>
+					      <div class="caption">
+					        		<% if !products[0].nil? %>
+									<h4><%= products[0].ref %></h4><legend><h5><%= products[0].collection %></h5></legend>
+									<% end %>
+							<center>
+									<h4><%= products[0].price_thb %> €</h4>
+									<%= link_to "Ver Detalle", product_path(products[0].id), :class => "btn btn-primary btn-small" %>
+							</center>
+					      </div>
+					    </div>
 				</div>
 
 </div>
@@ -96,7 +96,7 @@
 <ul class="thumbnails">
   <li class="span3">
     <div class="thumbnail">
-	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[0].ref}"), product_path(products[0].id) %>
+	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[0].ref}" %>
       <div class="caption">
         		<% if !products[0].nil? %>
 				<h4><%= products[0].ref %></h4><legend><h5><%= products[0].collection %></h5></legend>
@@ -111,7 +111,7 @@
   </li>
   <li class="span3">
     <div class="thumbnail">
-	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[1].ref}"), product_path(products[1].id) %>
+	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[1].ref}" %>
       <div class="caption">
         		<% if !products[1].nil? %>
 				<h4><%= products[1].ref %></h4><legend><h5><%= products[1].collection %></h5></legend>
@@ -126,7 +126,7 @@
   </li>
   <li class="span3">
     <div class="thumbnail">
-	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[2].ref}"), product_path(products[2].id) %>
+	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[2].ref}" %>
       <div class="caption">
         		<% if !products[2].nil? %>
 				<h4><%= products[2].ref %></h4><legend><h5><%= products[2].collection %></h5></legend>
@@ -141,7 +141,7 @@
   </li>
 <li class="span3">
     <div class="thumbnail">
-	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[3].ref}"), product_path(products[3	].id) %>
+	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[3].ref}" %>
       <div class="caption">
 
 				<% if !products[3].nil? %>

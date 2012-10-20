@@ -1,10 +1,22 @@
 Store::Application.routes.draw do
 
+  resources :navigators
+
   resources :product_types
 
   resources :load_files
 
-  devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+ # devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+  
+  devise_for :users, :controllers => { :sessions => "sessions" }, :skip => [:sessions] do 
+        get "/login" => "sessions#new"
+        get "/logout" => "sessions#destroy"
+        get "/users/sign_in" => "sessions#new", :as => :new_user_session
+        delete "/users/sign_out" => "sessions#destroy", :as => :destroy_user_session
+        post "/users/sign_in" => "sessions#create", :as => :user_session
+     end
+  
+ # devise_for :users, "admin/administrators"
   
   resources :products
   
@@ -59,7 +71,7 @@ Store::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "product_types#index"
+  root :to => "navigators#index"
 
   #root :to => "products#index"
   # See how all your routes lay out with "rake routes"
