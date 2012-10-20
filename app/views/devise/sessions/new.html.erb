@@ -85,7 +85,13 @@
 
 </div>
 
-<% products = Product.first(5) %>
+<% total = Product.count %>
+<% products = [] %>
+<% 4.times do |n| %>
+<% offset = rand(total) %>
+<% products[n] = Product.first(:offset => offset) %>
+<% end %>
+
 <ul class="thumbnails">
   <li class="span3">
     <div class="thumbnail">
@@ -97,7 +103,7 @@
 		<center>
 				<h4><%= products[0].price_thb %> €</h4>
 		
-	        <a href="#" class="btn btn-primary btn-small">Ver Detalle</a>
+				<%= link_to "Ver Detalle", product_path(products[0].id), :class => "btn btn-primary btn-small" %>
 		</center>
       </div>
     </div>
@@ -112,7 +118,7 @@
 		<center>
 				<h4><%= products[1].price_thb %> €</h4>
 		
-	        <a href="#" class="btn btn-primary btn-small">Ver Detalle</a>
+				<%= link_to "Ver Detalle", product_path(products[1].id), :class => "btn btn-primary btn-small" %>
 		</center>
       </div>
     </div>
@@ -127,7 +133,7 @@
 		<center>
 				<h4><%= products[2].price_thb %> €</h4>
 		
-	        <a href="#" class="btn btn-primary btn-small">Ver Detalle</a>
+				<%= link_to "Ver Detalle", product_path(products[2].id), :class => "btn btn-primary btn-small" %>
 		</center>
       </div>
     </div>
@@ -143,7 +149,7 @@
 		<center>
 				<h4><%= products[3].price_thb %> €</h4>
 		
-	        <a href="#" class="btn btn-primary btn-small">Ver Detalle</a>
+				<%= link_to "Ver Detalle", product_path(products[3].id), :class => "btn btn-primary btn-small" %>
 		</center>
 	
       </div>

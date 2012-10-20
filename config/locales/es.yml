@@ -155,6 +155,8 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Guardar
+    links:
+      back: "Regresar"
   number:
     currency:
       format:
