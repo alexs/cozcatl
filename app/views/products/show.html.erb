@@ -3,8 +3,10 @@
 		<%- model_class = Product -%>
 		
 			<div class="page-header">
-		  		<h2><%=t '.title', :default => @product.ref %></h2>
-		  		<h4><%= @product.collection %></h4>
+		  		<h3><%=t '.title', :default => @product.ref %></h3>
+		  		<h4><i><%= @product.collection %></i></h4>
+				<h4><%= @product.price_thb %> €</h4>
+			  
 			</div>
 		<div class="row">
 			<div class="span5">
