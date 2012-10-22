@@ -1,11 +1,17 @@
 class LoadFile < ActiveRecord::Base
-  attr_accessible :fichero
+  attr_accessible :fichero, :percent
   
   mount_uploader :fichero, FileUploadUploader
   
   validates_presence_of :fichero
+  validates_numericality_of :percent
   
   def load_products(fichero)
+    if self.percent.nil?
+      percent = 0
+    else
+      percent = self.percent
+    end
     counter = 0
     Product.delete_all
     File.open(Rails.root.to_s+"/public#{fichero}", "r") do |infile|
@@ -17,7 +23,8 @@ class LoadFile < ActiveRecord::Base
                   :collection =>array_line[1].gsub(/[\']/,'').strip,
                   :collection_sub =>array_line[2].gsub(/[\']/,'').strip,
                   :grams =>array_line[3].gsub(/[\']/,'').strip,
-                  :price_thb =>array_line[4].gsub(/[\']/,'').strip,
+                  :price_thb =>(((array_line[4].gsub(/[\']/,'').strip).to_f * percent) / 100) + (array_line[4].gsub(/[\']/,'').strip).to_f,
+                  :original_price=>array_line[4].gsub(/[\']/,'').strip,
                   :ring_for =>array_line[5].gsub(/[\']/,'').strip,
                   :comments =>array_line[6].gsub(/[\']/,'').strip,
                   :p_size =>array_line[7].gsub(/[\']/,'').strip,

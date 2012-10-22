@@ -47,21 +47,8 @@
 
 	<li id="preview-menu" class="dropdown">
 		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Contacto 
-			<b class="caret"></b>
 		</a>
-
-		<ul class="dropdown-menu">
-			<li><a href="#" target="_blank">Direccion</a></li>
-			<li><a href="#" target="_blank">email</a></li>
-			<li class="divider"></li>
-			<li><a href="#" target="_blank">telefono</a></li>
-			<li><a href="#" target="_blank">fax</a></li>
-		</ul>
 	</li>
-	
-	<%= form_for products_path, :html => {:method => 'get', :class => "navbar-search pull-left"} do %>
-	            <%= text_field_tag :search_word, nil, :class => "search-query span2", :placeholder => "Buscar..." %> 
-   <% end %>
 </ul>
 
 <ul id="main-menu-right" class="nav pull-right">

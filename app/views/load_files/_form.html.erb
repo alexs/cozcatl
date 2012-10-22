@@ -16,6 +16,11 @@
   <div class="field">
 	<%= f.file_field :fichero %>  
   </div>
+
+	Porcentaje en precio:
+  <div class="field">
+	% <%= f.number_field :percent, :class => "input-small", :value => 0 %>  
+  </div>
 <p>
   <div class="actions">
     <%= f.submit 'Guardar', :class => "btn btn-primary btn-medium", :id => "save_load" %> |  <%= link_to 'Cancelar', load_files_path, :class => "btn btn-warning btn-small" %> 
