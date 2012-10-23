@@ -1,0 +1,106 @@
+<br />
+<div class="row">
+	<div class="span3">
+			<%= form_for products_path, :html => {:method => 'get'} do %>
+			    <%= text_field_tag :search_word, nil, :class => "input-medium search-query", :placeholder => "Buscar..." %> 
+		   <% end %>
+	
+	
+	
+		<ul class="nav nav-list">
+	    <li class="nav-header">List header</li>
+	    <li class="active"><a href="#">Home</a></li>
+	    <li><a href="#">Library</a></li>
+	    ...
+	    </ul>
+	
+	
+	
+	
+	    
+	
+	    <div class="tab-content">
+	    <div class="tab-pane active" id="tab1">
+	    <p>I'm in Section 1.</p>
+	    </div>
+	    <div class="tab-pane" id="tab2">
+	    <p>Howdy, I'm in Section 2.</p>
+	    </div>
+		<div class="tab-pane" id="tab3">
+	    <p>Alex</p>
+	    </div>
+	    </div>
+	
+	
+	
+	
+	
+	
+		<ul class="nav nav-tabs nav-stacked">
+				<li>
+					
+				</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=silver">JOYERIA PLATA</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=steel">JOYERIA ACERO</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=fashion">BISUTERIA</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=cords">COLLARES</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=accessories">ACCESORIOS</a>
+			</li>
+			<li>
+				<a href="<%= root_url %>products?search_word=watches">RELOJES</a>
+			</li>
+			<li>
+				<a href="#">NOVEDADES</a>
+			</li>
+		</ul>
+	</div>
+	<div class="span8">
+		<ul class="nav nav-tabs">
+	    <li class="active"><a href="#tab1" data-toggle="tab">Todos</a></li>
+	    <li><a href="#tab2" data-toggle="tab">Plata</a></li>
+	    <li>
+			<%= link_to "Acero", root_url+"products?search_word=fashion", :method => :get, :remote => true, :update => "#products_list" %>
+		</li>
+	    <li><a href="#tab3" data-toggle="tab">Bisuteria</a></li>
+	    <li><a href="#tab3" data-toggle="tab">Collares</a></li>
+	    <li><a href="#tab3" data-toggle="tab">Relojes</a></li>
+	    <li><a href="#tab3" data-toggle="tab">Novedades</a></li>
+	
+	    </ul>
+	
+		<iframe src=<%= products_url %> width="100%" height="100%"></iframe> 
+	
+	
+		<ul class="thumbnails" id="products_list">
+	    <% @products.each do |product| %>
+		  <li class="span2">
+		    <div class="thumbnail">
+			  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
+		      <div class="caption">
+						<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
+				<center>
+						<h4><%= product.price_thb %> €</h4>
+						<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-small" %>
+				</center>
+		      </div>
+		    </div>
+		  </li>
+		<% end %>
+		</ul>
+		
+		<center>
+		<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
+		</center>
+		
+	</div>
+	
+</div>

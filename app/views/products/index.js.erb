@@ -1,0 +1,5 @@
+$("#products_list").empty();
+$("#products_list").html('<%=j render :partial => "index" %>');
+	<center>
+	<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
+	</center>

@@ -1,0 +1,14 @@
+ <% @products.each do |product| %>
+	  <li class="span2">
+	    <div class="thumbnail">
+		  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
+	      <div class="caption">
+					<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
+			<center>
+					<h4><%= product.price_thb %> €</h4>
+					<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-small" %>
+			</center>
+	      </div>
+	    </div>
+	  </li>
+	<% end %>

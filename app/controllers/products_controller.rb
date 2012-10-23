@@ -3,16 +3,37 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     
+    
+    
     if !params[:search_word].nil?
+      
+      if params[:search_word].include? "pla"
+        params[:search_word] = "silver"
+      elsif params[:search_word].include? "ace"
+        params[:search_word] = "steel"
+      elsif params[:search_word].include? "rel"
+        params[:search_word] = "wat"
+      elsif params[:search_word].include? "bisu"
+        params[:search_word] = "fashi"
+      elsif params[:search_word].include? "acces"
+        params[:search_word] = "acces"
+      end
+           
+          
+              
+              
            @products = Product.where(['collection LIKE ? OR ref LIKE ?',"%#{params[:search_word]}%","%#{params[:search_word]}%"]).paginate :per_page => 12, :page => params[:page]
            @total = @products.total_entries.to_s
+           @word = params[:search_word]
            else
            @products = Product.paginate(:page => params[:page], :per_page => 12)
            end
      #     @products = Product.paginate(:page => params[:page], :per_page => 12)
 
     respond_to do |format|
-      format.html # index.html.erb
+     format.html
+     format.json { render json: @products }
+      format.js
     end
   end
 

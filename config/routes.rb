@@ -19,6 +19,8 @@ Store::Application.routes.draw do
  # devise_for :users, "admin/administrators"
   
   resources :products
+  resources :dashboards
+  
   
   
 
