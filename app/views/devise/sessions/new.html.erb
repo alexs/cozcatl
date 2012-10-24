@@ -3,9 +3,12 @@
 	<div class="span3">
 		<ul class="nav nav-tabs nav-stacked">
 			<li>
+				<br />
+				
 					<%= form_for products_path, :html => {:method => 'get'} do %>
 					    <%= text_field_tag :search_word, nil, :class => "input-medium search-query ", :placeholder => "Buscar..." %> 
 				   <% end %>
+				<br />
 			</li>
 			<li>
 				<a href="<%= root_url %>products?search_word=silver">JOYERIA PLATA</a>
@@ -24,9 +27,6 @@
 			</li>
 			<li>
 				<a href="<%= root_url %>products?search_word=watch">RELOJES</a>
-			</li>
-			<li>
-				<a href="#">NOVEDADES</a>
 			</li>
 		</ul>
 	</div>
