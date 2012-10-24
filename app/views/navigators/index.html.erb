@@ -3,27 +3,31 @@
 <div class="row-fluid">	
 	<div class="span3">
 		<ul class="nav nav-tabs nav-stacked">
-			<li>
-				<a href="#">Joyeria en plata</a>
-			</li>
-			<li>
-				<a href="#">Joyeria en acero</a>
-			</li>
-			<li>
-				<a href="#">Joyeria de moda</a>
-			</li>
-			<li>
-				<a href="#">Collares</a>
-			</li>
-			<li>
-				<a href="#">Accesorios</a>
-			</li>
-			<li>
-				<a href="#">Relojes</a>
-			</li>
-			<li>
-				<a href="#">Novedades</a>
-			</li>
+				<li>
+					<br />
+
+						<%= form_for products_path, :html => {:method => 'get'} do %>
+						    <%= text_field_tag :search_word, nil, :class => "input-medium search-query ", :placeholder => "Buscar..." %> 
+					   <% end %>
+				</li>
+				<li>
+					<a href="<%= root_url %>products?search_word=silver">JOYERIA PLATA</a>
+				</li>
+				<li>
+					<a href="<%= root_url %>products?search_word=steel">JOYERIA ACERO</a>
+				</li>
+				<li>
+					<a href="<%= root_url %>products?search_word=fashion">BISUTERIA</a>
+				</li>
+				<li>
+					<a href="<%= root_url %>products?search_word=cord">COLLARES</a>
+				</li>
+				<li>
+					<a href="<%= root_url %>products?search_word=accessories">ACCESORIOS</a>
+				</li>
+				<li>
+					<a href="<%= root_url %>products?search_word=watch">RELOJES</a>
+				</li>
 		</ul>
 	</div>
 	
