@@ -1,156 +1,267 @@
 <br />
 <div class="row">
 	<div class="span3">
-			<%= form_for products_path, :html => {:method => 'get'} do %>
-			    <%= text_field_tag :search_word, nil, :class => "input-medium search-query", :placeholder => "Buscar..." %> 
-		   <% end %>
-		
-		
-		
+		<%= form_for products_path, :html => {:method => 'get'} do %>
+		<%= text_field_tag :search_word, nil, :class => "input-medium search-query", :placeholder => "Buscar..." %> 
+		<% end %>
+
+
 		<div style="max-width: 340px; padding: 8px 0;" class="well">
-		              <ul class="nav nav-list">
-		                <li class="nav-header">Prod</li>
-		                <li class="active"><a href="#">Todo</a></li>
-		                <li><a href="#">...</a></li>
-		                <li><a href="#">...</a></li>
-		                <li class="nav-header">SWAROVSKI </li>
-		                <li><a href="#">...</a></li>
-		                <li><a href="#">...</a></li>
-		                <li class="divider"></li>
-		                <li><a href="#">...</a></li>
-		              </ul>
-		            </div>
+         
+         <% if  ["SILVER SHAMBALLA STYLE".downcase,"SILVER SWAROVSKI".downcase, "SILVER INFINITE".downcase, 
+"SILVER PLAIN".downcase, "SILVER PANDOR@ STYLE".downcase, "SILVER BRACELETS CHARMS".downcase, "SILVER BEADS".downcase, 
+"SILVER FORMING".downcase, "SILVER SILK FINISHING".downcase, "SILVER FILIGREE".downcase, "SILVER BALI STYLE".downcase, 
+"SILVER ENAMEL".downcase, "SILVER CUBIC ZIRCONIA".downcase, "SILVER MOTHER PEARL/SHELLS".downcase, "SILVER MOTHER PEARL MARCASITE".downcase,
+"SILVER MARCASITE".downcase, "SILVER MARCASITE SYNTH STONES".downcase, "SILVER MARCASITE PEARLS".downcase, "SILVER CAMEOS".downcase,
+"SILVER ROSES".downcase, "SILVER PEARLS".downcase, "SILVER SHIVA EYE".downcase, "SILVER ABALON".downcase, "SILVER WOOD".downcase, 
+"SILVER MURANO GLASS".downcase, "SILVER EVIL EYE".downcase, "SILVER EUROGLASS".downcase, "SILVER MILLEFIORI".downcase, "SILVER ORCHIDS FLOWERS".downcase,
+"SILVER RUBY, EMERALDS, SAPPHIRES".downcase, "SILVER AMETHYST".downcase, "SILVER BLUE TOPAZ".downcase, "SILVER GARNET".downcase, "SILVER PERIDOT (OLIVINE)".downcase,
+"SILVER SMOKY QUARTZ".downcase,"SILVER MYSTIC TOPAZ".downcase, "SILVER AMBER".downcase, "SILVER CORAL".downcase, "SILVER TURQUOISE".downcase, "SILVER VOLCANO LAVA".downcase,
+"SILVER DRUZY".downcase, "SILVER ONYX".downcase, "SILVER TIGER EYE".downcase, "SILVER SANDSTONE".downcase, "SILVER JADE".downcase, "SILVER QUARTZ".downcase, "SILVER MALAQUITE".downcase,
+"SILVER LAPIS LAZULI".downcase, "SILVER MOON STONE".downcase, "SILVER AGATE".downcase, "SILVER OTHER GEMS".downcase, "SILVER PIERCING".downcase, "SILVER FOR CHILDREN".downcase,
+"SILVER FOR MAN".downcase, "SILVER CHOKERS".downcase, "SILVER CHAINS 30 CM (12 INCHES) FOR CHILDREN".downcase,"SILVER CHAINS 40 CM (16 INCHES)".downcase, 
+"SILVER CHAINS 45 CM (18 INCHES)".downcase, "SILVER CHAINS 50 CM (20 INCHES)".downcase, "SILVER CHAINS 60 CM (24 INCHES)".downcase, "SILVER CHAINS 70 CM (28 INCHES)".downcase,
+"SILVER CHAINS 80 CM (32 INCHES)".downcase, "SILVER FINDINGS".downcase, "silver"].include? @word %>                    
+            <% submenu = ["SILVER SHAMBALLA STYLE","SILVER SWAROVSKI", "SILVER INFINITE", 
+              "SILVER PLAIN", "SILVER PANDOR@ STYLE", "SILVER BRACELETS CHARMS", "SILVER BEADS", 
+              "SILVER FORMING", "SILVER SILK FINISHING", "SILVER FILIGREE", "SILVER BALI STYLE", 
+              "SILVER ENAMEL", "SILVER CUBIC ZIRCONIA", "SILVER MOTHER PEARL/SHELLS", "SILVER MOTHER PEARL MARCASITE",
+              "SILVER MARCASITE", "SILVER MARCASITE SYNTH STONES", "SILVER MARCASITE PEARLS", "SILVER CAMEOS",
+              "SILVER ROSES", "SILVER PEARLS", "SILVER SHIVA EYE", "SILVER ABALON", "SILVER WOOD", 
+              "SILVER MURANO GLASS", "SILVER EVIL EYE", "SILVER EUROGLASS", "SILVER MILLEFIORI", "SILVER ORCHIDS FLOWERS",
+              "SILVER RUBY, EMERALDS, SAPPHIRES", "SILVER AMETHYST", "SILVER BLUE TOPAZ", "SILVER GARNET", "SILVER PERIDOT (OLIVINE)",
+              "SILVER SMOKY QUARTZ","SILVER MYSTIC TOPAZ", "SILVER AMBER", "SILVER CORAL", "SILVER TURQUOISE", "SILVER VOLCANO LAVA",
+              "SILVER DRUZY", "SILVER ONYX", "SILVER TIGER EYE", "SILVER SANDSTONE", "SILVER JADE", "SILVER QUARTZ", "SILVER MALAQUITE",
+              "SILVER LAPIS LAZULI", "SILVER MOON STONE", "SILVER AGATE", "SILVER OTHER GEMS", "SILVER PIERCING", "SILVER FOR CHILDREN",
+              "SILVER FOR MAN", "SILVER CHOKERS", "SILVER CHAINS 30 CM (12 INCHES) FOR CHILDREN","SILVER CHAINS 40 CM (16 INCHES)", 
+              "SILVER CHAINS 45 CM (18 INCHES)", "SILVER CHAINS 50 CM (20 INCHES)", "SILVER CHAINS 60 CM (24 INCHES)", "SILVER CHAINS 70 CM (28 INCHES)",
+              "SILVER CHAINS 80 CM (32 INCHES)", "SILVER FINDINGS"] %>
+          
+          <% elsif @word.include? "steel" %>
+          
+         <% submenu = ["STAINLESS STEEL LEATHER","STAINLESS STEEL FIMO","STAINLESS STEEL ENAMEL","STAINLESS STEEL INFINITE DIRECTIONER" ,"STAINLESS STEEL JEWELRY" ,"STAINLESS STEEL CHAINS 40 CM (16 INCHES)","STAINLESS STEEL CHAINS 45 CM (18 INCHES)","STAINLESS STEEL CHAINS 50 CM (20 INCHES)","STAINLESS STEEL CHAINS 60 CM (22 INCHES)","STAINLESS STEEL CHAINS 70 CM (28 INCHES)","STAINLESS STEEL CHAINS 80 CM (32 INCHES)","STAINLESS STEEL FINDINGS","STAINLESS STEEL FINDINGS KOREAN" ]  %>
+             
+         <% elsif [
+          "ZAMAK JEWELRY".downcase,
+          "ENAMEL JEWELRY".downcase,
+          "SILK FINISHING".downcase,
+          "SWAROVSKI JEWELRY".downcase,
+          "BOUTIQUE SWAROVSKI".downcase,
+          "FASHION JEWELRY".downcase,
+          "MURANO GLASS JEWELRY".downcase,
+          "CUBIC ZIRCONIA JEWELRY".downcase,
+          "PEARLS JEWELRY".downcase,
+          "LEATHER PEARLS JEWELRY".downcase,
+          "SEMIPRECIOUS STONES".downcase,
+          "ALPACA JEWELRY", "jewelery"].include? @word %>
+         <% submenu = [
+         "ZAMAK JEWELRY",
+         "ENAMEL JEWELRY",
+         "SILK FINISHING",
+         "SWAROVSKI JEWELRY",
+         "BOUTIQUE SWAROVSKI",
+         "FASHION JEWELRY",
+         "MURANO GLASS JEWELRY",
+         "CUBIC ZIRCONIA JEWELRY",
+         "PEARLS JEWELRY",
+         "LEATHER PEARLS JEWELRY",
+         "SEMIPRECIOUS STONES",
+         "ALPACA JEWELRY"]
+          %>
+
+
+        <% elsif ["BRACELETS 18.00 CMS (7 INCHES)".downcase,"BRACELETS 22.00 CMS (9 INCHES)".downcase,"CORDS 40.00 CMS (16 INCHES)".downcase,"CORDS 45.00 CMS (18 INCHES)".downcase,"CORDS 50.00 CMS (20 INCHES)".downcase,"CORDS 60.00 CMS (22 INCHES)".downcase,"CORDS 80.00 CMS (32 INCHES)".downcase,"CORDS 90.00 CMS (35 INCHES)".downcase,"cord"].include? @word %>         
+
+         <% submenu = ["BRACELETS 18.00 CMS (7 INCHES)","BRACELETS 22.00 CMS (9 INCHES)","CORDS 40.00 CMS (16 INCHES)","CORDS 45.00 CMS (18 INCHES)","CORDS 50.00 CMS (20 INCHES)","CORDS 60.00 CMS (22 INCHES)","CORDS 80.00 CMS (32 INCHES)","CORDS 90.00 CMS (35 INCHES)"]   %>
+               
+
+       <% elsif ["CRYSTALS".downcase,"JEWELRY DISPLAYS".downcase,"JEWELRY POUCH".downcase,"JEWELRY BOX".downcase,"JEWELRY ACCESSORIES".downcase,"accessories"].include? @word %> 
+          <% submenu = ["CRYSTALS","JEWELRY DISPLAYS","JEWELRY POUCH","JEWELRY BOX","JEWELRY ACCESSORIES"] %>
+                
+         <% elsif ["CHIC WATCHES".downcase,"TANSY WATCHES".downcase,"SILVER 925 WATCHES".downcase, "watch"].include? @word %>
+
+         <% submenu =  ["CHIC WATCHES","TANSY WATCHES","SILVER 925 WATCHES"]  %>
+
+
+         <% else %>
+               <% submenu = ["silver", "steel", "jewelery", "cords", "accessories", "watches"] %>
+         <% end %>
+            <% i = 1 %>
+
+			<div class="accordion" id="accordion2">  
+
+			   <% submenu.each do |sub| %>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<ul class="nav nav-list" id="submenu_plata">
+							<li class="nav-header"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= i %>"><%= sub %></a></li>
+						</ul>
+					</div>
+					<div id="collapse<%= i %>" class="accordion-body collapse" style="height: 0px; ">
+						<div class="accordion-inner">
+							<ul class="nav nav-list" id="submenu_plata">
+							<li><a href="<%= root_url %>products?search_word=<%= sub.downcase %>">All</a></li> 
+							<% Product.select(:collection_sub).where('collection = ?',sub.to_s).uniq.each do |col| %>
+								<li><a href="<%= root_url %>products?search_word=<%= sub.downcase %>&sub_cat=<%= col.collection_sub %>"><%= col.collection_sub.capitalize %></a></li>
+							<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			         <% i = i+1%>
+			    <% end %>
+			
+			<!-- Div collapse  end -->
+				
+			</div>  
+			
+        
+                            
+
+		</div>
 	</div>
 	<div class="span8">
 		<ul class="nav nav-tabs">
-	   		<% if @word.nil? %>
-		    <li class="active">
-			<% else %>
-			<li>
-			<% end %>
-			<%= link_to "Todos", products_path %>
-		</li>
-		<% if @word == "silver" %>
-	    <li class="active">
-		<% else %>
-		<li>
-		<% end %>
-			<a href="<%= root_url %>products?search_word=silver">Plata</a>
-	    </li>
-		<% if @word == "steel" %>
-	    <li class="active">
-		<% else %>
-		<li>
-		<% end %>
-				<a href="<%= root_url %>products?search_word=steel">Acero</a>
-		</li>
-	  	<% if @word == "fashion" %>
-	    <li class="active">
-		<% else %>
-		<li>
-		<% end %>
-		<a href="<%= root_url %>products?search_word=fashion">Bisuteria</a>
-		</li>
-		<% if @word == "cord" %>
-	    <li class="active">
-		<% else %>
-		<li>
-		<% end %>
-			<a href="<%= root_url %>products?search_word=cord">Collares</a>
-		</li>
-			<% if @word == "accessories" %>
-		    <li class="active">
-			<% else %>
-			<li>
-			<% end %>
-				<a href="<%= root_url %>products?search_word=accessories">Accesorios</a>
-			</li>
-			<% if @word == "watch" %>
-		    <li class="active">
-			<% else %>
-			<li>
-			<% end %>
-				<a href="<%= root_url %>products?search_word=watch">Relojes</a>
-			</li>
-			
-	    </ul>
-	
-	
-	
-		<ul class="thumbnails" id="products_list">
-	    <% @products.each do |product| %>
-		  <li class="span2">
-		    <div class="thumbnail">
-			  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
-		      <div class="caption">
-						<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
-				<center>
-						<h4><%= product.price_thb %> €</h4>
-						<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-small" %>
-				</center>
-		      </div>
-		    </div>
-		  </li>
-		<% end %>
-		</ul>
-		
-		<center>
-		<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
-		</center>
-		
-	</div>
-	
-</div>
+			<% if @word.nil? || @word == "x" %>
+			<li class="active">
+				<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Todos", products_path %>
+				</li>
+				<% if @word.include? "silver" %>
+				<li class="active">
+					<% else %>
+					<li>
+						<% end %>
+						<a href="<%= root_url %>products?search_word=silver">Plata</a>
+					</li>
+					<% if @word.include? "steel" %>
+					<li class="active">
+						<% else %>
+						<li>
+							<% end %>
+							<a href="<%= root_url %>products?search_word=steel">Acero</a>
+						</li>
+						<% if [
+              "ZAMAK JEWELRY".downcase,
+              "ENAMEL JEWELRY".downcase,
+              "SILK FINISHING".downcase,
+              "SWAROVSKI JEWELRY".downcase,
+              "BOUTIQUE SWAROVSKI".downcase,
+              "FASHION JEWELRY".downcase,
+              "MURANO GLASS JEWELRY".downcase,
+              "CUBIC ZIRCONIA JEWELRY".downcase,
+              "PEARLS JEWELRY".downcase,
+              "LEATHER PEARLS JEWELRY".downcase,
+              "SEMIPRECIOUS STONES".downcase,
+              "ALPACA JEWELRY", "jewelery"].include? @word %>
+						<li class="active">
+							<% else %>
+							<li>
+								<% end %>
+								<a href="<%= root_url %>products?search_word=jewelery">Bisuteria</a>
+							</li>
+              <% if ["BRACELETS 18.00 CMS (7 INCHES)".downcase,"BRACELETS 22.00 CMS (9 INCHES)".downcase,"CORDS 40.00 CMS (16 INCHES)".downcase,"CORDS 45.00 CMS (18 INCHES)".downcase,"CORDS 50.00 CMS (20 INCHES)".downcase,"CORDS 60.00 CMS (22 INCHES)".downcase,"CORDS 80.00 CMS (32 INCHES)".downcase,"CORDS 90.00 CMS (35 INCHES)".downcase,"cord"].include? @word %>         
+							<li class="active">
+								<% else %>
+								<li>
+									<% end %>
+									<a href="<%= root_url %>products?search_word=cord">Cordones</a>
+								</li>
+								<% if  ["CRYSTALS".downcase,"JEWELRY DISPLAYS".downcase,"JEWELRY POUCH".downcase,"JEWELRY BOX".downcase,"JEWELRY ACCESSORIES".downcase,"accessories"].include? @word %>
+								<li class="active">
+									<% else %>
+									<li>
+										<% end %>
+										<a href="<%= root_url %>products?search_word=accessories">Accesorios</a>
+									</li>
+									<% if ["CHIC WATCHES".downcase,"TANSY WATCHES".downcase,"SILVER 925 WATCHES".downcase, "watch"].include? @word %>
+									<li class="active">
+										<% else %>
+										<li>
+											<% end %>
+											<a href="<%= root_url %>products?search_word=watch">Relojes</a>
+										</li>
+
+									</ul>
 
 
-<% x = 2 %>
-<% if x == 10 %>
-<%- model_class = Product -%> 
-<div class="page-header">
-  <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2><h6> <%= Product.count %> productos en el catálogo.</h6>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Imagen</th>
-      <th><%= model_class.human_attribute_name(:ref) %></th>
-      <th><%= model_class.human_attribute_name(:collection) %></th>
-      <th><%= model_class.human_attribute_name(:collection_sub) %></th>
-      <th><%= model_class.human_attribute_name(:grams) %></th>
-      <th><%= model_class.human_attribute_name(:price_thb) %></th>	
-     <% t '.actions', :default => t("helpers.actions") %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%#link_to product.id, product_path(product) %>
-		<%= image_tag "http://g.tanai.com/m0.php?src=#{product.ref}.jpg" %>
-		</td>
-        <td><%= product.ref %></td>
-        <td><%= product.collection %></td>
-        <td><%= product.collection_sub %></td>
-        <td><%= product.grams %></td>
-        <td><%= product.price_thb %></td>
-      
-          <% link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_product_path(product), :class => 'btn btn-mini' %>
-          <% link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      product_path(product),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-       
+
+									<ul class="thumbnails" id="products_list">
+										<% @products.each do |product| %>
+										<li class="span2">
+											<div class="thumbnail">
+												<%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
+												<div class="caption">
+													<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
+													<center>
+														<h4><%= product.price_thb %> €</h4>
+														<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-small" %>
+													</center>
+												</div>
+											</div>
+										</li>
+										<% end %>
+									</ul>
+
+									<center>
+										<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
+									</center>
+
+								</div>
+
+							</div>
 
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+							<% x = 2 %>
+							<% if x == 10 %>
+								<%- model_class = Product -%> 
+								<div class="page-header">
+									<h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2><h6> <%= Product.count %> productos en el catálogo.</h6>
+								</div>
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Imagen</th>
+											<th><%= model_class.human_attribute_name(:ref) %></th>
+											<th><%= model_class.human_attribute_name(:collection) %></th>
+											<th><%= model_class.human_attribute_name(:collection_sub) %></th>
+											<th><%= model_class.human_attribute_name(:grams) %></th>
+											<th><%= model_class.human_attribute_name(:price_thb) %></th>	
+											<% t '.actions', :default => t("helpers.actions") %>
+										</tr>
+									</thead>
+									<tbody>
+										<% @products.each do |product| %>
+										<tr>
+											<td><%#link_to product.id, product_path(product) %>
+												<%= image_tag "http://g.tanai.com/m0.php?src=#{product.ref}.jpg" %>
+											</td>
+											<td><%= product.ref %></td>
+											<td><%= product.collection %></td>
+											<td><%= product.collection_sub %></td>
+											<td><%= product.grams %></td>
+											<td><%= product.price_thb %></td>
 
-<% link_to t('.new', :default => t("helpers.links.new")),
-            new_product_path,
-            :class => 'btn btn-primary' %>
+											<% link_to t('.edit', :default => t("helpers.links.edit")),
+											edit_product_path(product), :class => 'btn btn-mini' %>
+											<% link_to t('.destroy', :default => t("helpers.links.destroy")),
+											product_path(product),
+											:method => :delete,
+											:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+											:class => 'btn btn-mini btn-danger' %>
 
-<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
-<% end %>
+
+
+										</tr>
+										<% end %>
+									</tbody>
+								</table>
+
+								<% link_to t('.new', :default => t("helpers.links.new")),
+								new_product_path,
+								:class => 'btn btn-primary' %>
+
+								<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
+								<% end %>

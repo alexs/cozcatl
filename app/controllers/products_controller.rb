@@ -6,28 +6,50 @@ class ProductsController < ApplicationController
     
     
     if !params[:search_word].nil?
+                                     
       
-      if params[:search_word].include? "pla"
+        
+      
+      
+      if params[:search_word].include? "plat"
         params[:search_word] = "silver"
-      elsif params[:search_word].include? "ace"
+      elsif params[:search_word].include? "acer"
         params[:search_word] = "steel"
-      elsif params[:search_word].include? "rel"
+      elsif params[:search_word].include? "relo"
         params[:search_word] = "wat"
-      elsif params[:search_word].include? "bisu"
-        params[:search_word] = "fashi"
-      elsif params[:search_word].include? "acces"
+      elsif params[:search_word].include? "bisut"
+        params[:search_word] = "jewelery"
+        elsif params[:search_word].include? "brasal"
+          params[:search_word] = "bracel"
+      elsif params[:search_word].include? "acceso"
         params[:search_word] = "acces"
       end
            
           
               
+           if !params[:sub_cat].nil?
+             @products = Product.where(['collection = ? AND collection_sub = ?',"#{params[:search_word].upcase}","#{params[:sub_cat]}"]).paginate :per_page => 12, :page => params[:page]
+             @word = params[:search_word]
+              # @total = @products.total_entries.to_s
               
+           elsif  params[:search_word] == "jewelery" 
+              @products = Product.where(['collection = ? or collection = ? or collection = ?or collection = ?or collection = ?or collection = ?or collection = ?or collection = ?or collection = ?or collection = ? 
+                or collection = ?or collection = ?',"ZAMAK JEWELRY","ENAMEL JEWELRY","SILK FINISHING","SWAROVSKI JEWELRY","BOUTIQUE SWAROVSKI","FASHION JEWELRY","MURANO GLASS JEWELRY","CUBIC ZIRCONIA JEWELRY",
+                "PEARLS JEWELRY","LEATHER PEARLS JEWELRY","SEMIPRECIOUS STONES","ALPACA JEWELRY"]).paginate :per_page => 12, :page => params[:page] 
+              @word = params[:search_word]
+           else   
            @products = Product.where(['collection LIKE ? OR ref LIKE ?',"%#{params[:search_word]}%","%#{params[:search_word]}%"]).paginate :per_page => 12, :page => params[:page]
-           @total = @products.total_entries.to_s
-           @word = params[:search_word]
+           @word = params[:search_word] 
+           #@total = @products.total_entries.to_s
+           
+          end 
+           
+           
            else
-           @products = Product.paginate(:page => params[:page], :per_page => 12)
-           end
+           @products = Product.paginate(:page => params[:page], :per_page => 12)  
+           @word = "x"
+           end 
+          
      #     @products = Product.paginate(:page => params[:page], :per_page => 12)
 
     respond_to do |format|

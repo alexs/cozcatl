@@ -1,0 +1,486 @@
+<%= Product.select(:collection_sub).where('collection = ?','SILVER SWAROVSKI ').uniq.each do |col| %>
+<% # Product.select(:collection).uniq.each do |col| %>
+	<p><%= col.collection_sub %></p>
+<% end %>
+
+
+
+
+<script>
+	window.onload=function(){$('#collapseOne').collapse("hide");};
+
+	
+</script>
+<br />
+<div class="row">
+	<div class="span3">
+		<%= form_for products_path, :html => {:method => 'get'} do %>
+		<%= text_field_tag :search_word, nil, :class => "input-medium search-query", :placeholder => "Buscar..." %> 
+		<% end %>
+
+
+		<div style="max-width: 340px; padding: 8px 0;" class="well">
+
+
+
+			<div class="accordion" id="accordion2">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<ul class="nav nav-list" id="submenu_plata">
+							<li class="nav-header"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Plata estilo Shamballa</a></li>
+						</ul>
+
+					</div>
+					<div id="collapseOne" class="accordion-body in collapse" style="height: auto; ">
+						<div class="accordion-inner">
+							<ul class="nav nav-list" id="submenu_plata">
+								<li><a href="#">Anillos</a></li>
+								<li><a href="#">Pulseras</a></li>
+								<li><a href="#">Pulseras Simbolos</a></li>
+								<li><a href="#">Pulseras Niños</a></li>
+								<li><a href="#">Pulseras Hombre</a></li>
+								<li><a href="#">Collares</a></li>
+								<li><a href="#">Tobilleras</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<ul class="nav nav-list" id="submenu_plata">
+							<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+								Plata Swarovski
+							</a></li>
+						</ul>
+					</div>
+					<div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+						<div class="accordion-inner">
+							<ul class="nav nav-list" id="submenu_plata">
+								<li><a href="#">Anillos</a></li>
+								<li><a href="#">Anillos Domo</a></li>
+								<li><a href="#">Anillos Bola</a></li>
+								<li><a href="#">Anillos Alianzas</a></li>
+								<li><a href="#">Anillos Bola Facetada</a></li>
+								<li><a href="#">Pendientes</a></li>
+								<li><a href="#">Pendientes Presión</a></li>
+								<li><a href="#">Pendientes Bola</a></li>
+								<li><a href="#">Pendientes Media Bola</a></li>
+								<li><a href="#">Pendientes Bola Gancho</a></li>
+								<li><a href="#">Pendientes Medio Aro</a></li>
+								<li><a href="#">Colgantes</a></li>
+								<li><a href="#">Colgantes Banderas</a></li>
+								<li><a href="#">Llamadores De Angeles</a></li>
+								<li><a href="#">Juegos</a></li>
+								<li><a href="#">Juegos Bola</a></li>
+								<li><a href="#">Pulseras</a></li>
+								<li><a href="#">Pulseras Macrame</a></li>
+								<li><a href="#">Pulseras Elasticas</a></li>
+								<li><a href="#">Pulseras Piel</a></li>
+								<li><a href="#">Pulseras Malla</a></li>
+								<li><a href="#">Brazaletes</a></li>
+								<li><a href="#">Brazaletes Caucho</a></li>
+								<li><a href="#">Brazaletes Macrame</a></li>
+								<li><a href="#">Collares</a></li>
+								<li><a href="#">Collares Seda</a></li>
+								<li><a href="#">Collares Piel</a></li>
+								<li><a href="#">Collares Elásticos</a></li>
+								<li><a href="#">Collares Malla</a></li>
+								<li><a href="#">Rosarios</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<ul class="nav nav-list" id="submenu_plata">
+							<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+								Plata Infinite
+							</a></li>
+						</ul>
+					</div>
+					<div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+						<div class="accordion-inner">
+							<ul class="nav nav-list" id="submenu_plata">
+								<li><a href="#">Anillos</a></li>
+								<li><a href="#">Pendientes</a></li>
+								<li><a href="#">Pulseras</a></li>
+								<li><a href="#">Collares</a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<ul class="nav nav-list" id="submenu_plata">
+								<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+									Plata Lisa
+								</a></li>
+							</ul>
+						</div>
+						<div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+							<div class="accordion-inner">
+								<ul class="nav nav-list" id="submenu_plata">
+								<li><a href="#">		Anillos</a></li>
+								
+									<li><a href="#">		Anillos Alianzas </a></li>
+									<li><a href="#">		Pendientes </a></li>
+									<li><a href="#">		Pendientes Presion </a></li>
+									<li><a href="#">		Pendientes Labrados </a></li>
+										<li><a href="#">	Pendientes Aros </a></li>
+										<li><a href="#">	Pendientes Aros Redondos </a></li>
+										<li><a href="#">	Pendientes Aros Cuadrados </a></li>
+										<li><a href="#">	Pendientes Aros Diamantados </a></li>
+										<li><a href="#">	Pendientes Aros Labrados </a></li>
+										<li><a href="#">	Pendientes Aros Celtas </a></li>
+										<li><a href="#">	Colgantes </a></li>
+										<li><a href="#">	Colgantes Cruces </a></li>
+										<li><a href="#">	Colgantes Pastillero </a></li>
+										<li><a href="#">	Colgantes Chapas</a></li>
+										<li><a href="#">	Colgantes Enamorados</a></li>
+										<li><a href="#">	Pulseras</a></li>
+										<li><a href="#">	Pulseras Cadena</a></li>
+										<li><a href="#">	Pulseras Macrame</a></li>
+										<li><a href="#">	Pulseras Esclavas Macrame</a></li>
+										<li><a href="#">	Pulseras Seda              		</a></li>
+										<li><a href="#">	Pulseras Piel              	</a></li>
+										<li><a href="#">	Brazaletes</a></li>
+										<li><a href="#">	Medias Cañas</a></li>
+										<li><a href="#">	Collares</a></li>
+										<li><a href="#">	Collares Juegos</a></li>
+										<li><a href="#">	Tobilleras</a></li>
+										<li><a href="#">	Arras</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+			
+			
+			
+			
+			
+			
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<ul class="nav nav-list" id="submenu_plata">
+									<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+										Plata estilo Pandora
+									</a></li>
+								</ul>
+							</div>
+							<div id="collapseFive" class="accordion-body collapse" style="height: 0px; ">
+								<div class="accordion-inner">
+									<ul class="nav nav-list" id="submenu_plata">
+									<li><a href="#">		Anillos</a></li>
+
+										<li>	<a href="#">                              		</a></li>
+										<li>	<a href="#"> 	Pulseras Mosqueton       		 </a></li>
+										<li>	<a href="#"> 	Pulseras Clips            		</a></li>
+										<li>	<a href="#"> 	Pulseras De Piel          		</a></li>
+										<li>	<a href="#"> 	Pulseras Caucho              </a></li>
+										<li>	<a href="#"> 	Collares Mosqueton        	</a></li>
+										<li>	<a href="#"> 	Collares Caucho           </a></li>
+										<li>	<a href="#"> 	Separadores              	 </a></li>
+										<li>	<a href="#"> 	Abalorios                  </a></li>
+										<li>	<a href="#"> 	Abalorios Dorados          </a></li>
+										<li>	<a href="#"> 	Abalorios Esmalte          </a></li>
+										<li>	<a href="#"> 	Abalorios Colgante        		</a></li>
+										<li>	<a href="#"> 	Abalorios Marcasita       </a></li>
+										<li>	<a href="#"> 	Abalorios Circonita       </a></li>
+										<li>	<a href="#"> 	Abalorios Cristal Murano  	</a></li>
+										<li>	<a href="#"> 	Abalorios Swarovski       	</a></li>
+										<li>	<a href="#"> 	Abalorios Cristal         </a></li>
+										<li>	<a href="#"> 	Abalorios Piedras         	</a></li>
+										<li>	<a href="#"> 	Abalorios Resina          	</a></li>
+										<li>	<a href="#"> 	Abalorios Millefiori     		</a></li>
+										<li>	<a href="#"> 	Abalorios Ojo Turko      	</a></li>
+										<li>	<a href="#"> 	Abalorios Ceramica        </a></li>
+										<li>	<a href="#"> 	Abalorios Perla De Rio    </a></li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+			               
+	                       
+	
+	
+	
+	
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<ul class="nav nav-list" id="submenu_plata">
+										<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+											Plata Pulseras Charms
+										</a></li>
+									</ul>
+								</div>
+								<div id="collapseSix" class="accordion-body collapse" style="height: 0px; ">
+									<div class="accordion-inner">
+										<ul class="nav nav-list" id="submenu_plata">
+									
+											<li>	<a href="#">	Pulseras			</a></li>
+											<li>	<a href="#">    Charms Plata Lisa      </a></li>
+											<li>	<a href="#"> 	Charms Esmalte	       		 </a></li>
+										
+										</ul>
+									</div>
+								</div>
+							</div>
+	
+	
+	
+								<div class="accordion-group">
+									<div class="accordion-heading">
+										<ul class="nav nav-list" id="submenu_plata">
+											<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+												Plata Bolas
+											</a></li>
+										</ul>
+									</div>
+									<div id="collapseSeven" class="accordion-body collapse" style="height: 0px; ">
+										<div class="accordion-inner">
+											<ul class="nav nav-list" id="submenu_plata">
+												<li>	<a href="#">                                      		</a></li>
+												<li>	<a href="#"> 	Anillos                          		 </a></li>
+												<li>	<a href="#"> 	Anillos Llamadores Angeles        		</a></li>
+												<li>	<a href="#"> 	Pendientes                        		</a></li>
+												<li>	<a href="#"> 	Pendientes Media Bola                </a></li>
+												<li>	<a href="#"> 	Pendientes Gancho                 	</a></li>
+												<li>	<a href="#"> 	Llamadores De Angeles             </a></li>
+												<li>	<a href="#"> 	Llamadores De Angeles Etnicos    	 </a></li>
+												<li>	<a href="#"> 	Bolas Llamadores De Angeles        </a></li>
+												<li>	<a href="#"> 	Pulseras                           </a></li>
+												<li>	<a href="#"> 	Pulseras Decenarios                </a></li>
+												<li>	<a href="#"> 	Pulseras Piel Llamadores Angeles  		</a></li>
+												<li>	<a href="#"> 	Brazaletes                        </a></li>
+												<li>	<a href="#"> 	Collares                          </a></li>
+												<li>	<a href="#"> 	Collares Largos                   	</a></li>
+												<li>	<a href="#"> 	Rosarios                          	</a></li>
+											
+
+											</ul>
+										</div>
+									</div>
+								</div>
+	
+	
+	                              
+	
+	
+	
+	
+	
+										<div class="accordion-group">
+											<div class="accordion-heading">
+												<ul class="nav nav-list" id="submenu_plata">
+													<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse8">
+														Plata Electroforming
+													</a></li>
+												</ul>
+											</div>
+											<div id="collapse8" class="accordion-body collapse" style="height: 0px; ">
+												<div class="accordion-inner">
+													<ul class="nav nav-list" id="submenu_plata">
+														<li>	<a href="#">   	Anillos          		 </a></li>
+														<li>	<a href="#">   	Pendientes        		</a></li>
+														<li>	<a href="#">   	Colgantes         		</a></li>
+														<li>	<a href="#">   	Juegos               </a></li>
+														<li>	<a href="#">   	Pulseras          	</a></li>
+														<li>	<a href="#">   	Brazaletes        </a></li>
+														<li>	<a href="#">   	Collares        	 </a></li>
+														<li>	<a href="#">   	Broches           </a></li>
+													
+
+
+													</ul>
+												</div>
+											</div>
+										</div>
+										
+										
+										
+										
+										
+										
+										
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<ul class="nav nav-list" id="submenu_plata">
+														<li class="nav-header"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse9">
+															Plata Satinada
+														</a></li>
+													</ul>
+												</div>
+												<div id="collapse9" class="accordion-body collapse" style="height: 0px; ">
+													<div class="accordion-inner">
+														<ul class="nav nav-list" id="submenu_plata">
+															<li>	<a href="#">   	Anillos          		 </a></li>
+															<li>	<a href="#">   	Pendientes        		</a></li>
+															<li>	<a href="#">   	Colgantes         		</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+	
+	                              
+	
+			
+			
+			
+			
+			
+			
+			
+			<!-- Div collapse  end -->
+				
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+	<div class="span8">
+		<ul class="nav nav-tabs">
+			<% if @word.nil? %>
+			<li class="active">
+				<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Todos", products_path %>
+				</li>
+				<% if @word == "silver" %>
+				<li class="active">
+					<% else %>
+					<li>
+						<% end %>
+						<a href="<%= root_url %>products?search_word=silver">Plata</a>
+					</li>
+					<% if @word == "steel" %>
+					<li class="active">
+						<% else %>
+						<li>
+							<% end %>
+							<a href="<%= root_url %>products?search_word=steel">Acero</a>
+						</li>
+						<% if @word == "fashion" %>
+						<li class="active">
+							<% else %>
+							<li>
+								<% end %>
+								<a href="<%= root_url %>products?search_word=fashion">Bisuteria</a>
+							</li>
+							<% if @word == "cord" %>
+							<li class="active">
+								<% else %>
+								<li>
+									<% end %>
+									<a href="<%= root_url %>products?search_word=cord">Collares</a>
+								</li>
+								<% if @word == "acces" %>
+								<li class="active">
+									<% else %>
+									<li>
+										<% end %>
+										<a href="<%= root_url %>products?search_word=accessories">Accesorios</a>
+									</li>
+									<% if @word == "watch" %>
+									<li class="active">
+										<% else %>
+										<li>
+											<% end %>
+											<a href="<%= root_url %>products?search_word=watch">Relojes</a>
+										</li>
+
+									</ul>
+
+
+
+									<ul class="thumbnails" id="products_list">
+										<% @products.each do |product| %>
+										<li class="span2">
+											<div class="thumbnail">
+												<%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
+												<div class="caption">
+													<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
+													<center>
+														<h4><%= product.price_thb %> €</h4>
+														<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-small" %>
+													</center>
+												</div>
+											</div>
+										</li>
+										<% end %>
+									</ul>
+
+									<center>
+										<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
+									</center>
+
+								</div>
+
+							</div>
+
+
+							<% x = 2 %>
+							<% if x == 10 %>
+								<%- model_class = Product -%> 
+								<div class="page-header">
+									<h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2><h6> <%= Product.count %> productos en el catálogo.</h6>
+								</div>
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Imagen</th>
+											<th><%= model_class.human_attribute_name(:ref) %></th>
+											<th><%= model_class.human_attribute_name(:collection) %></th>
+											<th><%= model_class.human_attribute_name(:collection_sub) %></th>
+											<th><%= model_class.human_attribute_name(:grams) %></th>
+											<th><%= model_class.human_attribute_name(:price_thb) %></th>	
+											<% t '.actions', :default => t("helpers.actions") %>
+										</tr>
+									</thead>
+									<tbody>
+										<% @products.each do |product| %>
+										<tr>
+											<td><%#link_to product.id, product_path(product) %>
+												<%= image_tag "http://g.tanai.com/m0.php?src=#{product.ref}.jpg" %>
+											</td>
+											<td><%= product.ref %></td>
+											<td><%= product.collection %></td>
+											<td><%= product.collection_sub %></td>
+											<td><%= product.grams %></td>
+											<td><%= product.price_thb %></td>
+
+											<% link_to t('.edit', :default => t("helpers.links.edit")),
+											edit_product_path(product), :class => 'btn btn-mini' %>
+											<% link_to t('.destroy', :default => t("helpers.links.destroy")),
+											product_path(product),
+											:method => :delete,
+											:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+											:class => 'btn btn-mini btn-danger' %>
+
+
+
+										</tr>
+										<% end %>
+									</tbody>
+								</table>
+
+								<% link_to t('.new', :default => t("helpers.links.new")),
+								new_product_path,
+								:class => 'btn btn-primary' %>
+
+								<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
+								<% end %>
