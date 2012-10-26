@@ -8,6 +8,10 @@ class Product < ActiveRecord::Base
   :watch_movement, :watch_waterproof, :wide, :wide_unit, :original_price
   
   
+  def t_collection_sub
+     self.collection.gsub(/SILVER/, 'plata')
+  end
+  
 =begin
   def current_stock
     scraper = Scraper.define do

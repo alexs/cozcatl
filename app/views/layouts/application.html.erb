@@ -40,8 +40,8 @@
 	
 	
 <li><%= link_to "INICIO", navigators_path %></li>	
-<li><%= link_to 'Productos', products_path %></li>	
-<li><%= link_to 'Cargar Ficheros', load_files_path %></li>
+<li><%= link_to 'Productos', products_path %></li>
+
 <li><a href="/#gallery" id="swatch-link">Ubicación</a></li>
 
 
@@ -51,18 +51,29 @@
 	</li>
 </ul>
 
-<ul id="main-menu-right" class="nav pull-right">
+<ul id="main-menu-right" class="nav pull-right"> 
+
+<% if can? :manage, LoadFile %>	
+<li id="preview-menu"> <%= link_to 'Cargar Ficheros', load_files_path %></li>
+<% end %>
+	         
 	
-	<li id="preview-menu">
-		 <% if user_signed_in? %>
-		
-		 <%= link_to(raw("#{current_user.email}"),"#",{:class => 'dropdown-toggle'})  %>
-		<% end %>
+	<li id="preview-menu" class="dropdown">
+	 <% if user_signed_in? %>
+		<%= link_to(raw("#{current_user.email}<b class='caret'></b>"),"#",{:class => 'dropdown-toggle', :data => {:toggle => "dropdown"}})  %>
+
+		<ul class="dropdown-menu">
+			<li><%= link_to "Modificar mi cuenta", edit_user_registration_path %></li>			
+		</ul> 
+	 <% end %>
 	</li>
 	
+	
+	                     
+	
 	<li id="preview-menu">
 		 <% if user_signed_in? %>
-			<li><%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>
+			<li><%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %></li>
 		<% end %>
 	</li>
 	

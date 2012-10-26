@@ -73,10 +73,10 @@
 						<h4>Inicia sesión.</h4>
 						
 						<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-							<%= f.label :email %>
+							<%= f.label "Correo electrónico" %>
 							<%= f.email_field :email, :class => "input-medium " %>
 
-							<%= f.label :password %>
+							<%= f.label "Contraseña" %>
 							<%= f.password_field :password, :class => "input-medium" %>
 
 							<% if devise_mapping.rememberable? -%>
@@ -107,7 +107,7 @@
 	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[0].ref}"), product_path(products[0].id) %>
       <div class="caption">
         		<% if !products[0].nil? %>
-				<h4><%= products[0].ref %></h4><legend><h5><%= products[0].collection %></h5></legend>
+				<h4><%= products[0].ref %></h4><legend><h5><%= t_word(products[0].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[0].price_thb %> €</h4>
@@ -122,7 +122,7 @@
 	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[1].ref}"), product_path(products[1].id) %>
       <div class="caption">
         		<% if !products[1].nil? %>
-				<h4><%= products[1].ref %></h4><legend><h5><%= products[1].collection %></h5></legend>
+				<h4><%= products[1].ref %></h4><legend><h5><%= t_word(products[1].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[1].price_thb %> €</h4>
@@ -137,7 +137,7 @@
 	  <%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{products[2].ref}"), product_path(products[2].id) %>
       <div class="caption">
         		<% if !products[2].nil? %>
-				<h4><%= products[2].ref %></h4><legend><h5><%= products[2].collection %></h5></legend>
+				<h4><%= products[2].ref %></h4><legend><h5><%= t_word(products[2].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[2].price_thb %> €</h4>
@@ -153,7 +153,7 @@
       <div class="caption">
 
 				<% if !products[3].nil? %>
-				<h4><%= products[3].ref %></h4><legend><h5><%= products[3].collection %></h5></legend>
+				<h4><%= products[3].ref %></h4><legend><h5><%= t_word(products[3].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[3].price_thb %> €</h4>

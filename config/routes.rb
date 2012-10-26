@@ -1,5 +1,7 @@
 Store::Application.routes.draw do
 
+  resources :translations
+
   resources :navigators
 
   resources :product_types

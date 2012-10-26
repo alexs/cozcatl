@@ -1,6 +1,5 @@
 class LoadFilesController < ApplicationController
-  # GET /load_files
-  # GET /load_files.json
+  load_and_authorize_resource
   def index
      if !params[:search_word].nil?
         redirect_to products_path(:search_word =>params[:search_word]), :notice => "Resultados para: #{params[:search_word]}"

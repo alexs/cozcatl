@@ -8,7 +8,7 @@
 
 		<div style="max-width: 340px; padding: 8px 0;" class="well">
          
-         <% if  ["SILVER SHAMBALLA STYLE".downcase,"SILVER SWAROVSKI".downcase, "SILVER INFINITE".downcase, 
+         <% if  ["SILVER SHAMBTodoA STYLE".downcase,"SILVER SWAROVSKI".downcase, "SILVER INFINITE".downcase, 
 "SILVER PLAIN".downcase, "SILVER PANDOR@ STYLE".downcase, "SILVER BRACELETS CHARMS".downcase, "SILVER BEADS".downcase, 
 "SILVER FORMING".downcase, "SILVER SILK FINISHING".downcase, "SILVER FILIGREE".downcase, "SILVER BALI STYLE".downcase, 
 "SILVER ENAMEL".downcase, "SILVER CUBIC ZIRCONIA".downcase, "SILVER MOTHER PEARL/SHELLS".downcase, "SILVER MOTHER PEARL MARCASITE".downcase,
@@ -22,7 +22,7 @@
 "SILVER FOR MAN".downcase, "SILVER CHOKERS".downcase, "SILVER CHAINS 30 CM (12 INCHES) FOR CHILDREN".downcase,"SILVER CHAINS 40 CM (16 INCHES)".downcase, 
 "SILVER CHAINS 45 CM (18 INCHES)".downcase, "SILVER CHAINS 50 CM (20 INCHES)".downcase, "SILVER CHAINS 60 CM (24 INCHES)".downcase, "SILVER CHAINS 70 CM (28 INCHES)".downcase,
 "SILVER CHAINS 80 CM (32 INCHES)".downcase, "SILVER FINDINGS".downcase, "silver"].include? @word %>                    
-            <% submenu = ["SILVER SHAMBALLA STYLE","SILVER SWAROVSKI", "SILVER INFINITE", 
+            <% submenu = ["SILVER SHAMBTodoA STYLE","SILVER SWAROVSKI", "SILVER INFINITE", 
               "SILVER PLAIN", "SILVER PANDOR@ STYLE", "SILVER BRACELETS CHARMS", "SILVER BEADS", 
               "SILVER FORMING", "SILVER SILK FINISHING", "SILVER FILIGREE", "SILVER BALI STYLE", 
               "SILVER ENAMEL", "SILVER CUBIC ZIRCONIA", "SILVER MOTHER PEARL/SHELLS", "SILVER MOTHER PEARL MARCASITE",
@@ -84,7 +84,7 @@
 
 
          <% else %>
-               <% submenu = ["silver", "steel", "jewelery", "cords", "accessories", "watches"] %>
+               <% submenu = ["Plata", "Acero", "Bisutería", "Cordones", "Accesorios", "Relojes"] %>
          <% end %>
             <% i = 1 %>
 
@@ -94,15 +94,15 @@
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						<ul class="nav nav-list" id="submenu_plata">
-							<li class="nav-header"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= i %>"><%= sub %></a></li>
+							<li class="nav-header"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= i %>"><%= t_word(sub) %></a></li>
 						</ul>
 					</div>
 					<div id="collapse<%= i %>" class="accordion-body collapse" style="height: 0px; ">
 						<div class="accordion-inner">
 							<ul class="nav nav-list" id="submenu_plata">
-							<li><a href="<%= root_url %>products?search_word=<%= sub.downcase %>">All</a></li> 
+							<li><a href="<%= root_url %>products?search_word=<%= sub.downcase %>">Todo</a></li> 
 							<% Product.select(:collection_sub).where('collection = ?',sub.to_s).uniq.each do |col| %>
-								<li><a href="<%= root_url %>products?search_word=<%= sub.downcase %>&sub_cat=<%= col.collection_sub %>"><%= col.collection_sub.capitalize %></a></li>
+								<li><a href="<%= root_url %>products?search_word=<%= sub.downcase %>&sub_cat=<%= col.collection_sub %>"><%= t_word(col.collection_sub).capitalize %></a></li>
 							<% end %>
 							</ul>
 						</div>
@@ -194,10 +194,10 @@
 											<div class="thumbnail">
 												<%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
 												<div class="caption">
-													<h4><%= product.ref %></h4><legend><h5><%= product.collection %></h5></legend>
+													<h4><%= product.ref %></h4><legend><h5><%= t_word(product.collection) %></h5></legend>
 													<center>
 														<h4><%= product.price_thb %> €</h4>
-														<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-small" %>
+														<%= link_to "Ver Detalle", product_path(product), :class => "btn btn-primary btn-smTodo" %>
 													</center>
 												</div>
 											</div>

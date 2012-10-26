@@ -1,0 +1,32 @@
+<%= form_for(@translation) do |f| %>
+  <% if @translation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@translation.errors.count, "error") %> prohibited this translation from being saved:</h2>
+
+      <ul>
+      <% @translation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :original %><br />
+    <%= f.text_field :original %>
+  </div>
+  <div class="field">
+    <%= f.label :translate %><br />
+    <%= f.text_field :translate %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "¿Es una frase?" %>
+    Sí <%= f.radio_button(:phrase, true)  %> No <%= f.radio_button(:phrase, false, :checked => "checked")  %>
+    
+  </div> 
+  <br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  # GET /products
-  # GET /products.json
+  load_and_authorize_resource
   def index
     
     
@@ -11,17 +10,17 @@ class ProductsController < ApplicationController
         
       
       
-      if params[:search_word].include? "plat"
+      if params[:search_word].downcase.include? "plat"
         params[:search_word] = "silver"
-      elsif params[:search_word].include? "acer"
+      elsif params[:search_word].downcase.include? "acer"
         params[:search_word] = "steel"
-      elsif params[:search_word].include? "relo"
+      elsif params[:search_word].downcase.include? "relo"
         params[:search_word] = "wat"
-      elsif params[:search_word].include? "bisut"
+      elsif params[:search_word].downcase.include? "bisut"
         params[:search_word] = "jewelery"
-        elsif params[:search_word].include? "brasal"
+        elsif params[:search_word].downcase.include? "brasal"
           params[:search_word] = "bracel"
-      elsif params[:search_word].include? "acceso"
+      elsif params[:search_word].downcase.include? "acceso"
         params[:search_word] = "acces"
       end
            

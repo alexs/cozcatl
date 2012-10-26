@@ -78,7 +78,7 @@
 						  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[0].ref}" %>
 					      <div class="caption">
 					        		<% if !products[0].nil? %>
-									<h4><%= products[0].ref %></h4><legend><h5><%= products[0].collection %></h5></legend>
+									<h4><%= products[0].ref %></h4><legend><h5><%= t_word(products[0].collection) %></h5></legend>
 									<% end %>
 							<center>
 									<h4><%= products[0].price_thb %> €</h4>
@@ -103,7 +103,7 @@
 	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[0].ref}" %>
       <div class="caption">
         		<% if !products[0].nil? %>
-				<h4><%= products[0].ref %></h4><legend><h5><%= products[0].collection %></h5></legend>
+				<h4><%= products[0].ref %></h4><legend><h5><%= t_word(products[0].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[0].price_thb %> €</h4>
@@ -118,7 +118,7 @@
 	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[1].ref}" %>
       <div class="caption">
         		<% if !products[1].nil? %>
-				<h4><%= products[1].ref %></h4><legend><h5><%= products[1].collection %></h5></legend>
+				<h4><%= products[1].ref %></h4><legend><h5><%= t_word(products[1].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[1].price_thb %> €</h4>
@@ -133,7 +133,7 @@
 	  <%= image_tag "http://img.tanai.com/m.php?ref=#{products[2].ref}" %>
       <div class="caption">
         		<% if !products[2].nil? %>
-				<h4><%= products[2].ref %></h4><legend><h5><%= products[2].collection %></h5></legend>
+				<h4><%= products[2].ref %></h4><legend><h5><%= t_word(products[2].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[2].price_thb %> €</h4>
@@ -149,7 +149,7 @@
       <div class="caption">
 
 				<% if !products[3].nil? %>
-				<h4><%= products[3].ref %></h4><legend><h5><%= products[3].collection %></h5></legend>
+				<h4><%= products[3].ref %></h4><legend><h5><%= t_word(products[3].collection) %></h5></legend>
 				<% end %>
 		<center>
 				<h4><%= products[3].price_thb %> €</h4>
