@@ -7,10 +7,12 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.email == "alexs1010@gmail.com" || user.email == "koldo@inmobroker.es"
         can :manage, :all
-        can :manage, :LoadFile
+        can :manage, :LoadFile 
+        can :manage, :Product 
+        can :manage, :Translation
+        
        else
         can :read, Product 
-        can :read, Translation
        end
     #
     # The first argument to `can` is the action you are giving the user permission to do.

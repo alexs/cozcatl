@@ -1,6 +1,6 @@
 class TranslationsController < ApplicationController
-  # GET /translations
-  # GET /translations.json
+  load_and_authorize_resource
+
   def index
     @translations = Translation.all
 
@@ -41,10 +41,10 @@ class TranslationsController < ApplicationController
   # POST /translations.json
   def create
     @translation = Translation.new(params[:translation])
-
+    
     respond_to do |format|
       if @translation.save
-        format.html { redirect_to @translation, notice: 'Translation was successfully created.' }
+        format.html { redirect_to @translation, notice: 'Traduccion guardada correctamente' }
         format.json { render json: @translation, status: :created, location: @translation }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class TranslationsController < ApplicationController
 
     respond_to do |format|
       if @translation.update_attributes(params[:translation])
-        format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
+        format.html { redirect_to @translation, notice: "Traduccion modificada correctamente." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

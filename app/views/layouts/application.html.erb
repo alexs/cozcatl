@@ -51,18 +51,22 @@
 	</li>
 </ul>
 
-<ul id="main-menu-right" class="nav pull-right"> 
+<ul id="main-menu-right" class="nav pull-right">  
+         
+    <% if can? :manage, Translation %>	
+    <li id="preview-menu"> <%= link_to 'Traducciones', translations_path %></li>
+    <% end %>
+
 
 <% if can? :manage, LoadFile %>	
 <li id="preview-menu"> <%= link_to 'Cargar Ficheros', load_files_path %></li>
 <% end %>
-	         
-	
-	<li id="preview-menu" class="dropdown">
+	              
 	 <% if user_signed_in? %>
-		<%= link_to current_user.email,edit_user_registration_path,{:class => 'dropdown-toggle'}  %>
+	    <li id="preview-menu" class="dropdown">     
+		<%= link_to current_user.email,edit_user_registration_path,{:class => 'dropdown-toggle'}  %> 
+		</li>
 	 <% end %>
-	</li>
 	
 	
 	                     

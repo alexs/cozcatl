@@ -9,14 +9,17 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %>       
+  
 
   <div class="field">
-    <%= f.label :original %><br />
+    <%= f.label :original %>
+    <i>(De preferencia ingresa ésta palabra en mayúsculas. )</i> <BR />  
     <%= f.text_field :original %>
   </div>
   <div class="field">
-    <%= f.label :translate %><br />
+    <%= f.label :translate %>
+    <br /> 
     <%= f.text_field :translate %>
   </div>
   
@@ -27,6 +30,7 @@
   </div> 
   <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar", :class => 'btn btn-primary btn-medium' %>  <%= link_to 'Cancelar', translations_path, :class => 'btn btn-danger btn-small' %>
+    
   </div>
 <% end %>

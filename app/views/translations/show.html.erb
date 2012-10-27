@@ -1,15 +1,17 @@
+<h2>Detalles de la traducción </h2>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Original:</b>
+  <b>Palabra o frase Original:</b>
   <%= @translation.original %>
 </p>
 
 <p>
-  <b>Translate:</b>
+  <b>Traducción:</b>
   <%= @translation.translate %>
 </p>
-
-
-<%= link_to 'Edit', edit_translation_path(@translation) %> |
-<%= link_to 'Back', translations_path %>
+  <br />
+<p>
+<%= link_to 'Modificar', edit_translation_path(@translation), :class => 'btn btn-primary btn-medium' %> <%= link_to 'Cancelar', translations_path, :class => 'btn btn-danger btn-small' %> 
+</p>

@@ -223,11 +223,15 @@ es:
     models:
         load_file: Cargador de productos
         product: Producto
+        translation: Traducciones
     attributes:
         load_file:
             fichero: "Fichero"
         product:
             email: "Correo electrónico"
             password: "Clave"
+        translation:
+            original: "Palabra o frase"
+            translate: "Traducción"
     errors:
       <<: *errors
