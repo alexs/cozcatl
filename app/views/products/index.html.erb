@@ -93,11 +93,11 @@
 			   <% submenu.each do |sub| %>
 				<div class="accordion-group">
 					<div class="accordion-heading">
-					 <!-- <ul class="nav nav-list" id="submenu_plata"> 
-							<li class="nav-header">   -->   
-							<a class="accordion-toggle" href="#collapse<%= i %>" data-parent="#accordion2" data-toggle="collapse" ><%= t_word(sub) %></a>
-					<!--		</li>
-						</ul>  --> 
+					 <ul class="nav nav-list" id="submenu_plata"> 
+							<li class="nav-header">  
+							<%= link_to_function t_word(sub), "$('#collapse#{i}').collapse('toggle')" %>
+						</li>
+						</ul>
 					</div>
 					<div id="collapse<%= i %>" class="accordion-body collapse" style="height: 0px; ">
 						<div class="accordion-inner">

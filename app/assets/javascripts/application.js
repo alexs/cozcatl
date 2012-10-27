@@ -28,6 +28,7 @@ $('.modal-footer [id^="load_data_button_"]').live("click", function(){
   $('.modal-body p').text('Esta ventana se cerrará automáticamente una vez cargados los datos.');
   $('.modal-footer a').hide();
 });
+        
 
 
 
