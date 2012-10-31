@@ -190,10 +190,50 @@
 									</ul>
 
 
+                 <% if can? :manage, @products %> 
+                   <%- model_class = Product -%> 
+   								
+                   <table class="table table-striped">
+   									<thead>
+   										<tr>
+   											<th>Imagen</th>
+   											<th>Ref.</th>
+   											<th>Colección</th>
+   											<th>Categoría</th>
+   											<th>Precio</th>	
+   											<th>Acciones</th>
+   										</tr>
+   									</thead>
+   									<tbody>
+   										<% @products.each do |product| %>
+   										<tr>
+   											<td>
+												<%= link_to (image_tag "http://g.tanai.com/m0.php?src=#{product.ref}.jpg"), product_path(product) %>
+   											</td>
+   											<td><%= product.ref %></td>
+   											<td><%= t_word(product.collection) %></td>
+   											<td><%= t_word(product.collection_sub) %></td>
+   											<td><%= product.price_thb %></td>
+                        <td>
+                        <%= link_to 'Ver', product_path(product), :class => 'btn btn-primary btn-mini' %>
+   											<%= link_to t('.edit', :default => t("helpers.links.edit")),
+   											edit_product_path(product), :class => 'btn btn-mini' %>
+   											<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+   											product_path(product),
+   											:method => :delete,
+   											:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+   											:class => 'btn btn-mini btn-danger' %>
+                        </td>
 
+   										</tr>
+   										<% end %>
+   									</tbody>
+   								</table>
+                   
+                 <% else %>
 									<ul class="thumbnails" id="products_list">
 										<% @products.each do |product| %>
-										<li class="span2">
+										<li class="span2">        
 											<div class="thumbnail">
 												<%= link_to (image_tag "http://img.tanai.com/m.php?ref=#{product.ref}"), product_path(product) %>
 												<div class="caption">
@@ -207,64 +247,9 @@
 										</li>
 										<% end %>
 									</ul>
-
+                 <% end %>
 									<center>
 										<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
 									</center>
-
 								</div>
-
 							</div>
-
-
-							<% x = 2 %>
-							<% if x == 10 %>
-								<%- model_class = Product -%> 
-								<div class="page-header">
-									<h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2><h6> <%= Product.count %> productos en el catálogo.</h6>
-								</div>
-								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th>Imagen</th>
-											<th><%= model_class.human_attribute_name(:ref) %></th>
-											<th><%= model_class.human_attribute_name(:collection) %></th>
-											<th><%= model_class.human_attribute_name(:collection_sub) %></th>
-											<th><%= model_class.human_attribute_name(:grams) %></th>
-											<th><%= model_class.human_attribute_name(:price_thb) %></th>	
-											<% t '.actions', :default => t("helpers.actions") %>
-										</tr>
-									</thead>
-									<tbody>
-										<% @products.each do |product| %>
-										<tr>
-											<td><%#link_to product.id, product_path(product) %>
-												<%= image_tag "http://g.tanai.com/m0.php?src=#{product.ref}.jpg" %>
-											</td>
-											<td><%= product.ref %></td>
-											<td><%= product.collection %></td>
-											<td><%= product.collection_sub %></td>
-											<td><%= product.grams %></td>
-											<td><%= product.price_thb %></td>
-
-											<% link_to t('.edit', :default => t("helpers.links.edit")),
-											edit_product_path(product), :class => 'btn btn-mini' %>
-											<% link_to t('.destroy', :default => t("helpers.links.destroy")),
-											product_path(product),
-											:method => :delete,
-											:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-											:class => 'btn btn-mini btn-danger' %>
-
-
-
-										</tr>
-										<% end %>
-									</tbody>
-								</table>
-
-								<% link_to t('.new', :default => t("helpers.links.new")),
-								new_product_path,
-								:class => 'btn btn-primary' %>
-
-								<%= will_paginate @products, :renderer => BootstrapPagination::Rails %>
-								<% end %>

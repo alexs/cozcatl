@@ -157,6 +157,10 @@ es:
       update: Guardar
     links:
       back: "Regresar"
+      destroy: "Eliminar"
+      edit: "Modificar"
+    titles:
+      edit: "Modificar"
   number:
     currency:
       format:
@@ -230,6 +234,14 @@ es:
         product:
             email: "Correo electrónico"
             password: "Clave"
+            ref: "Ref"
+            collection: "Colección"
+            collection_sub: "Tipo"
+            grams: "Gramos"
+            price_thb: "Precio"
+            original_price: "Precio original"
+            comments: "Comentarios"
+            
         translation:
             original: "Palabra o frase"
             translate: "Traducción"

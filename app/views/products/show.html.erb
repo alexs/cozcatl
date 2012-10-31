@@ -26,8 +26,8 @@
 						</tr>
 						<% if !@product.collection_sub.nil? %>
 						<tr>
-							<td><strong>Tipo:</strong></td>
-							<td><%= @product.collection_sub %></td>
+							<td><strong>Categoría:</strong></td>
+							<td><%= t_word(@product.collection_sub) %></td>
 						</tr>
 						<% end %>
 						<% if !@product.collection_sub.nil? %>
@@ -39,7 +39,7 @@
 						<% if !@product.ring_for.nil? and @product.ring_for.size > 1 and @product.ring_for != "null" %>
 						<tr>
 							<td><strong>Para:</strong></td>
-							<td><%= @product.ring_for %></td>
+							<td><%= t_word(@product.ring_for) %></td>
 						</tr>
 						<% end %>
 
@@ -75,13 +75,13 @@
 						<% if !@product.colour.nil? and @product.colour.size > 1 and @product.colour != "null" %>
 						<tr>	
 							<td><strong>Tonalidad:</strong></td>
-							<td><%= @product.colour %></td>
+							<td><%= t_word(@product.colour) %></td>
 						</tr>
 						<% end %>	
 						<% if !@product.metal.nil? and @product.metal.size > 1 and @product.metal != "null" %>
 						<tr>	
 							<td><strong>Metal:</strong></td>
-							<td><%= @product.metal %></td>
+							<td><%= t_word(@product.metal) %></td>
 						</tr>
 						<% end %>		
 
@@ -103,7 +103,7 @@
 						<% if !@product.material.nil? and @product.material.size > 1 and @product.material != "null" %>
 						<tr>	
 							<td><strong>Material:</strong></td>
-							<td><%= @product.material %></td>
+							<td><%= t_word(@product.material) %></td>
 						</tr>
 						<% end %>
 
@@ -155,28 +155,28 @@
 						<% if !@product.watch.nil? and @product.watch.size > 1 and @product.watch != "null" and @product.watch != "cms" %>
 						<tr>	
 							<td><strong>Reloj:</strong></td>
-							<td><%= @product.watch %></td>
+							<td><%= t_word(@product.watch) %></td>
 						</tr>
 						<% end %>
 
 						<% if !@product.watch_band.nil? and @product.watch_band.size > 1 and @product.watch_band != "null"  %>
 						<tr>	
 							<td><strong>Correa:</strong></td>
-							<td><%= @product.watch_band %></td>
+							<td><%= t_word(@product.watch_band) %></td>
 						</tr>
 						<% end %>
 
 						<% if !@product.watch_movement.nil? and @product.watch_movement.size > 1 and @product.watch_movement != "null"  %>
 						<tr>	
 							<td><strong>Movimiento:</strong></td>
-							<td><%= @product.watch_movement %></td>
+							<td><%= t_word(@product.watch_movement) %></td>
 						</tr>
 						<% end %>
 
 						<% if !@product.watch_waterproof.nil? and @product.watch_waterproof.size > 1 and @product.watch_waterproof != "null"  %>
 						<tr>	
 							<td><strong>Sumergible:</strong></td>
-							<td><%= @product.watch_waterproof %></td>
+							<td><%= t_word(@product.watch_waterproof) %></td>
 						</tr>
 						<% end %>
 
@@ -212,9 +212,20 @@
 			</div>
 		</div>
 		<div class="form-actions">
-			<%= link_to 'Regresar', :back, :class => 'btn btn-info'%>
-			<% link_to t('.back', :default => t("helpers.links.back")),
-			products_path, :class => 'btn'  %>
+			<%= link_to 'Regresar', :back, :class => 'btn btn-info'%> 
+			<% if can? :manage, Product %>	
+      
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+      	edit_product_path(@product), :class => 'btn btn-primary' %>			               
+			<%= link_to 'Eliminar', product_path(@product), method: :delete, data: { confirm: '¿Estas seguro de eliminar del catálogo éste producto? Una vez elimnado no podrás deshacer esta acción' }, :class => 'btn btn-danger'  %>
+      <% end %>
+			
+			
+		 
+			
+			
+			
+			
 		</div>
 	</div>
 </div>
