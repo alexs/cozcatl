@@ -75,7 +75,7 @@
 						<% if !@product.colour.nil? and @product.colour.size > 1 and @product.colour != "null" %>
 						<tr>	
 							<td><strong>Tonalidad:</strong></td>
-							<td><%= t_word(@product.colour) %></td>
+							<td><%= t_word(@product.colour.upcase) %></td>
 						</tr>
 						<% end %>	
 						<% if !@product.metal.nil? and @product.metal.size > 1 and @product.metal != "null" %>
